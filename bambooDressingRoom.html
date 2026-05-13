@@ -10,8 +10,9 @@
         text-align: center;
       }
       .mainImg {
-        width: 70%;
+        width: auto;
         border-radius: 10px;
+        max-height: 900px;
       }
        p{
         font-size: 16px;
@@ -72,15 +73,28 @@ video{
       <a href="index.html"> Back to Main Page </a>
 
       <a href="secondfloor.html"> Go to Second Floor </a>
-    </div><img class = "mainImg" src=""/>
-    <p>Set behind the columns of the Loggia, the view from the window reveals the finely carved Roman Ionic capitals atop the columns, possibly based on Piranesi's engravings. This room was primarily used as a dressing room that has been turned into a small guest bedroom by the Iliffes and was once used in the 2019 Documentary ‘The Windsors’.
+    </div><img class = "mainImg" src="Basildon Park img/20260421_120545.jpg"/>
+    <p><img class="medialeft" src="Basildon Park img/20260421_120407.jpg"/>Set behind the columns of the Loggia, the view from the window reveals the finely carved Roman Ionic capitals atop the columns, possibly based on Piranesi's engravings. This room was primarily used as a dressing room that has been turned into a small guest bedroom by the Iliffes and was once used in the 2019 Documentary ‘The Windsors’.
 </br>
-</br>
+</br><video class="mediaright" height="300" controls autoplay muted loop id="video">
+    <source src="Basildon Park img/20260421_120606.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 A feature of the room is a Chinese six-leaf Coromandel Screen that was once 12 panels and depicted <em>‘An Elegant Gathering in the Western Gardens’</em>, a famous event in Chinese literature. According to the legend, a group of 16 famous statesmen, literati and artists gathered in the Western Garden of Wang Shen. One of the artists of the period wrote an account commemorating the experience on one side, while the front shows illustrations of the gathering. As only half of the panels are present, it is impossible to know the full story and information of the piece, and, as it would only be significant to someone with an understanding of Chinese literature, it raises questions about its significance here beyond notions of imperial control. The Regency lit bateau (boat-shaped bed) is seen to be draped with muslin hangings in an Anglo-Indian style that is copied from contemporary paintings and drawings. There is also a small empire seat that was donated to a wartime sale to raise funds for the Red Cross. Interpretations should depict the Room as a space that explores Britain's fascination with Asian aesthetics and how the colonial trade networks have founded a change in global goods into a fashionable symbol of status.</p>
 </br>
 </br>
 <h1> The Red Bathroom</h1>
 <p>
 This room also links to the Red Bathroom, a bizarre-looking room that is one of the modern features of the house that stands out, whose purpose was to modernise the house that initially only had one bathroom to make it more suitable for 1950s living. This is a pattern they did for other little rooms that were much too small for anything else. Interpretations here should mention this room as evidence of changing ideas surrounding luxury, hygiene, and modernity within aristocratic life and show how technological advancements have crept into a country house and reshaped everyday routines. This room is a part of Basildon’s layered history, and demonstrates how restoration and adaptations can alter and confuse the distinctive lines between original historical material and later 20th-century reconstruction.</p>
-  </body>
+ 
+ <script>
+const video = document.getElementById("video");
+
+video.muted = true;
+
+video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+});
+</script></body>
 </html>

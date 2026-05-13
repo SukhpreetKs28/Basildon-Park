@@ -10,8 +10,9 @@
         text-align: center;
       }
       .mainImg {
-        width: 70%;
+        width: auto;
         border-radius: 10px;
+        max-height: 900px;
       }
        p{
         font-size: 16px;
@@ -72,10 +73,16 @@ video{
       <a href="index.html"> Back to Main Page </a>
 
       <a href="secondfloor.html"> Go to Second Floor </a>
-    </div><img class = "mainImg" src=""/>
+    </div><img class = "mainImg" src="Basildon Park img/20260421_121143.jpg"/>
     <p><img class="medialeft" width="300" height="400" src="https://www.nationaltrustimages.org.uk/AssetLink/ye6a785lhydekua88c2n014g12c3h8pl.jpg"/>This bedroom, unlike any other, is the only one with an alcove with a decorated ceiling. It resides on the side of the house designated the Regent’s side in Papworth’s plans, suggesting it may have been a main guest bedroom. There is a possible relation to this, as at the time of the regent’s visit in 1813, when it was tenanted by Richard Burroughs, a friend of the regent. The room itself has an inviting atmosphere with its light pink coloured wall, which, considering it was shared by both Lord and Lady Iliffe, is a very progressive fact and was even  used in the filming production of Belgravia in 2019.
-</br>
-</br>
+</br><video class="mediaright" height="300" controls autoplay muted loop id="video">
+    <source src="Basildon Park img/20260421_121529.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+</br><video class="medialeft" height="300" controls autoplay muted loop id="video">
+    <source src="Basildon Park img/20260421_121743 - Copy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 This room is where the fire originated in 1946 under military occupation as a prisoner of war camp, where British soldiers used this room as a sort of mess room. The fire that broke out damaged the floor and ceiling of the Library below, and scorch marks can still be seen on the library floor. When the Iliffes first brought the house, the bedroom wasn’t accessible due to how damaged the floor was. It was only once the floor was repaired that the Iliffes were able to see the room, finally and be surprised that the plasterwork on the ceiling of the alcove was still intact. The room is a reflection of the Iliffes ’ 25-year renovation of the house, portraying the structural renovations and the aesthetic choices made in the endeavour. The room itself features a Chippendale-style mahogany break-front bookcase and a modern shell mirror made by Davies as a gift to Lady Iliffe, as well as a portrait of a young Lady Iliffe at 18.
 </br>
 </br>
@@ -84,5 +91,15 @@ Interpretations of this room should portray how the space reflects both aristocr
 </br>
 Lady Illife’s Bathroom is next door to her bedroom and was likely shared too, is one of the little rooms in the house that was converted into a bathroom. The commodes were brought from Liberty’s department store in London, where they were used in the Ladies Cloakroom and had odd features such as flying fish bath taps. There is also a vaulted corridor that leads to a bathroom and the Green Chintz Room in the north-east corner.
 </p>
+<script>
+const video = document.getElementById("video");
+
+video.muted = true;
+
+video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+});
+</script>
   </body>
 </html>

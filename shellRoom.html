@@ -73,12 +73,15 @@ video{
 
       <a href="secondfloor.html"> Go to Second Floor </a>
     </div>
-   <img class = "mainImg" src=""/>
+   <img class = "mainImg" src="Basildon Park img/20260421_120727.jpg"/>
     <p>The Shell Room is one of the most creative rooms in the house, in here you can find shells covering everything from wall-sized tapestries, wardrobes, painting frames and wall panelling. This room portrays the Fanes, whose house at Basildon predates Sir Francis Sykes’s and the 1st and 2nd Lady Iliffe’s. Mary Fane (wife of the 1st Viscount of Fane) and Charlotte Iliffe were avid shell collectors, and this room was a testament to that fact. 
-</br>
+</br><video class="mediaright" height="300" controls autoplay muted loop id="video">
+    <source src="Basildon Park img/20260421_121055.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 </br>
 This room may have originally been a sitting room, as unlike the other bedrooms, it had no attached dressing room. In the 18th century, it was normal for ladies of the family to have their own private sitting room. In the 19th-century plans, it is shown as a nursery; during the time the Iliffes owned the house, it was Lord Iliffe’s dressing room, and by 1978, it was unfurnished. Under the National Trust, it houses a varied collection of land and marine shells and fossils collected by the first Lady Charlotte Iliffe and presented to the Trust by Lord Iliffe. 
-</br>
+</br><img class="medialeft" width="100" height="200" src="Basildon Park img/20260421_120706.jpg"/>
 </br>
 Lady Charlotte’s collection was amassed when travelling abroad with her husband on the shores of the Indian and Pacific Oceans, as well as from trips from Australia, the West Indies, and Southeast Asia, or purchased from other collectors, starting from her teens. In 1946, she purchased a collection from Alderson, an amateur scientist, but not all of it is on show, as the collection is too large, so it's instead on display at the Museum of Wales, Cardiff. Tom Pain, a conchologist, contracted her to study the collection, and due to his passion, she gifted him part of the collection that is now held at Amgueddfa Cymru (National Museum Wales) in 1981.
 </br>
@@ -88,5 +91,15 @@ In 1979, the National Trust decorated the room to resemble a shell grotto, much 
 </br>
 Interpretations of the Shell room should discuss how this decorative space reflects the Upper-Class fascination with collecting, ornamentation and displays of refinement. It also makes the visitor think about the labour behind just a decorative interior, from volunteers and servants maintaining collections and displays to craftsmen producing ornamental detail. This space draws attention to the room's reconstructive aspect, prompting the visitor to question how authenticity is performed across different creative displays within heritage spaces.
 </p>
+<script>
+const video = document.getElementById("video");
+
+video.muted = true;
+
+video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+});
+</script>
   </body>
 </html>

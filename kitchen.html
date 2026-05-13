@@ -48,6 +48,7 @@ video{
     image-rendering: auto;
     backface-visibility: hidden;
     transform: translateZ(0);
+    
 }
 .medialeft{
   float: left;
@@ -76,20 +77,30 @@ video{
     <a href="firstfloor.html">
       Go to First Floor
     </a>
-    </div><img class = "mainImg" src=""/>
-    <p>The Kitchen is one of your last stops on the Tour of Basildon House, which you can only access by already being on the Second Floor. Unlike most of the house, this is an aspect that has been modernised in its entirety, giving a shock to the system after roaming through so many different rooms that echo different styles and eras. As soon as you walk in, you are in a grand open space, all the appliances and cupboards are a mint green, a popular colour of the time.
-</br><video class="mediaright" height="300" controls autoplay muted loop id="video">
+    </div><video class="mainImg" height="500" controls autoplay muted loop id="video">
     <source src="Basildon Park img/20260421_122722.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
+    <p><img class="medialeft" width="300" height="400" src="https://imgs.search.brave.com/aL61KVFHo19sEJYaPpYou__kTur6nvkVTZSDXbwC8iY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaW52ZW50/b3J5L21kL21kMzIy/MTgwMTAyMTUuanBn"/>The Kitchen is one of your last stops on the Tour of Basildon House, which you can only access by already being on the Second Floor. Unlike most of the house, this is an aspect that has been modernised in its entirety, giving a shock to the system after roaming through so many different rooms that echo different styles and eras. As soon as you walk in, you are in a grand open space, all the appliances and cupboards are a mint green, a popular colour of the time.
+</br>
 </br>
 This kitchen was originally used as a bedroom by both the Sykes and the Morrisons, as a women’s bedroom connected to the now Sutherland Room, but later became the Lady of the House’s sitting room. Although for James Morrison, he made it into his own personal bedroom with a door connecting to his anteroom and another to his Oak sitting room. His son, Charles, also used this as his bedroom, hanging portraits of his parents.
-</br>
+</br><img class="mediaright" width="300"  src="Basildon Park img/20260421_122841.jpg"/>When the Iliffes moved in, they transformed the space into a 1950s kitchen, with the appliances and cupboards being a mint green colour, which was popular at the time. This was a very modern addition to the house, as it was one of the first fitted kitchens in a country house, and was designed by John Fowler, who was responsible for many of the interiors of Basildon Park. The kitchen was designed to be practical and efficient, with plenty of storage space and modern appliances for the time.
 </br>
 As lady Iliffe had transformed the space into a complete 1950s kitchen with fitted storage units, it is when you look up that you feel like you are one step in the future and one step in the past. This is because the ceiling still has the design that Papworth designed, making it an unusually grand-looking kitchen. Due to its nature, when filming has occurred at the house, it has mainly been used as a green room for the cast, with the only exception being a show set more in the modern era, such as the 2019 The Windsors. It also became a place to prep for the lavish parties the Iliffes held, as expected of their social status as members of the Upper Class. Ruth Mott, a television cook and personality, also worked as a cook at Basildon Park from 1970-87, cooking both English and Continental, before she became famous in her 70s for a TV series, ‘The Victorian Kitchen’, where she demonstrated the skills she developed working in Victorian and wartime kitchens such as Basildon Park. In addition to cooking, she also helped with general housekeeping, repairs and the walls in the Octagon Room. The Kitchen was closed after the Iliffes moved out and was only recently opened to the public by the National Trust in June 2010. 
 </br>
 </br>
 Interpretations of this space should reflect how Basildon Park has adapted to the changing social situations after a decline of the traditional country house system, which is no longer sustainable in post-war life. This space reveals the personal labour that highlights everyday life, shifting focus to the ideas of domesticity and class in Britain. Should think about how, as visitors, you expected to come across something as modern as this when you were initially going around the house, and how this altered your perceptions of heritage spaces. This should make Visitors think about how historical heritage sites choose to preserve and prioritise their spaces.
 </p>
+<script>
+const video = document.getElementById("video");
+
+video.muted = true;
+
+video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+});
+</script>
   </body>
 </html>
