@@ -9,6 +9,10 @@
         background: radial-gradient(circle, #c6fca2, #e3ee7f);
         text-align: center;
       }
+      .mainImg {
+        width: 70%;
+        border-radius: 10px;
+      }
        p{
         font-size: 16px;
         width: 80%;
@@ -36,12 +40,35 @@
         display: flex;
   justify-content: center;
   gap: 40px;
-      
       }
+      img{
+  width: 300;
+}
+video{ 
+    image-rendering: auto;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+.medialeft{
+  float: left;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+.mediaright{
+  float: right;
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    }
     </style>
   </head>
   <body>
     <h1>Entrance Hall</h1>
+  
     <div class="topBar">
 <a href="index.html">
       Back to Main Page                
@@ -51,8 +78,9 @@
       Go to First Floor
     </a>
     </div>
+    <img class = "mainImg" src="https://www.theenglishhome.co.uk/_gatsby/file/1c8a93c06e15a911b870ca220e7a0550/13166_new-Entrance-Hall-1290662.jpg"/>
     <p>Once you enter through the Double doors of the Loggia, you enter a vastly different space, a hall full of extravagance designed to impress. Throughout its life, the Entrance hall has set the expectations for the house for visitors and served as a link between the exterior and the interior of the house and parkland, as well as served for grand entertainments that were popular in country-house life in the 18th Century. The Hall is the first of many richly decorated rooms in the centre of the house, such as the Octagon Room. When you enter, you are greeted by the volunteers of the National Trust, who discuss the four main owners of the house with you and direct you where to go to follow the flow of the house.
-</br>
+</br><img class="medialeft" width="300" src="Basildon Park img/20260421_111116.jpg"/>
 </br>
 The original 18th-century design of the Room by John Carr was seen to be in the fashionable ‘Adam’ style of the time, inspired by Roman ruins. This used a method in which the outdoor colours of the Park and the stone of the building were reflected inside to create a picturesque effect. These were typically more pastel tones that were light and airy, such as yellows and greens, or blues and greys, and would give way to much stronger colours as you would have delved deeper into the house. As per the style, the house was designed so that the interior was cohesive and unified, with furniture that complemented the plasterwork and architecture, as seen in how the furniture was arranged against the room's walls to open up the space and create a grander effect.
 </br>
@@ -73,5 +101,15 @@ The original plasterwork, which featured elements of diamond-patterned bands, pl
 The Iliffes contributed significantly to how the house is now presented by the National Trust, offering ‘A 20th -century imaging of the past’ by rescuing furnishings from other houses that were not restored to reflect the original arrangement of the hall in the 18th century. Interpretations of this room should focus on the layered space shaped by loss, intervention, and the curators' choices, such as the Iliffes, and should reflect the differences and challenges that went into reconstructing it to echo the Georgian style. This would allow visitors to reflect on which aspects of the house are genuinely from the 18th century, and which are from modern reconstruction.
 </p>
 </br></br>
+<script>
+const video = document.getElementById("video");
+
+video.muted = true;
+
+video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+});
+</script>
 </body>
 </html>

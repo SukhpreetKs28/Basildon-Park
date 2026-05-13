@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sutherland Room</title>
     <style>
-      body {
+        body {
         background: radial-gradient(circle, #c6fca2, #e3ee7f);
         text-align: center;
+      }
+      .mainImg {
+        width: auto;
+        height:auto;
+        image-rendering: auto;
+        border-radius: 10px;
       }
        p{
         font-size: 16px;
@@ -36,8 +42,30 @@
         display: flex;
   justify-content: center;
   gap: 40px;
-      
       }
+      img{
+  width: 300;
+}
+video{ 
+    image-rendering: auto;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+.medialeft{
+  float: left;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+.mediaright{
+  float: right;
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    }
     </style>
   </head>
   <body>
@@ -51,16 +79,29 @@
       Go to First Floor
     </a>
     </div>
-    
-    <p>To the right of the Entrance Hall, there is a rather strange room covered in various drawings and works of art. Sutherland Hall is far apart from the rest of the rooms in the House, as it is used to display the artwork studies of British artist Graham Sutherland for his painting <strong><em>Christ in Glory</em></strong>. The room reflects the friendship that formed between Lord Iliffe and Sutherland, as well as the family's connection with Coventry. The rooms also have one of the house's few original marble fireplaces, which is used as a focal point in the room's symmetry, with a sketch of a head on top of two doors on either side, with hands over them and two ceramic figures on either side of the foot of the fireplace.
-</br>
+    <img class = "mainImg" src="https://images.ntpl.org.uk/hppa-zooms/00000000122/cms_bas01475.bro"/>
+    <p><img class="mediaright" height="400" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Christ_in_Glory_tapestry_by_Graham_Sutherland_in_Coventry_Cathedral.jpg/960px-Christ_in_Glory_tapestry_by_Graham_Sutherland_in_Coventry_Cathedral.jpg"/>
+To the right of the Entrance Hall, there is a rather strange room covered in various drawings and works of art. Sutherland Hall is far apart from the rest of the rooms in the House, as it is used to display the artwork studies of British artist Graham Sutherland for his painting <strong><em>Christ in Glory</em></strong>. The room reflects the friendship that formed between Lord Iliffe and Sutherland, as well as the family's connection with Coventry. The rooms also have one of the house's few original marble fireplaces, which is used as a focal point in the room's symmetry, with a sketch of a head on top of two doors on either side, with hands over them and two ceramic figures on either side of the foot of the fireplace.
+<video class="medialeft" height="300" controls autoplay muted loop id="video">
+    <source src="Basildon Park img/20260421_111136 - Copy.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video></br>
 </br>
 
 On the night of 14 November 1940, the centre of Coventry was bombed and burned over all night, which led to the total ruin of a 14th-century cathedral. It was at this site that an improvised altar was erected and a service was held, bearing the message ‘Coventry will live again’. Sutherland was tasked with designing a tapestry that would be 78 ft high and 39 ft wide for the modern cathedral being built next to the ruins of the old cathedral. The studies in the Sutherland Room span three years, during which he worked on the final design. Previously hung in Lady Illiffe’s bedroom, the National Trust moved them here so that the room could act as a space to show some of these studies to the public. All 165 studies were sold to Lord Iliffe, who in turn presented them to the Herbert Art Gallery in Coventry, ‘they should all be kept together, and a nucleus should always be on display, showing how the design evolved’. Small selections are on loan to the cathedral, where the tapestry is displayed, and to the National Trust for Basildon House, where they are currently being displayed in this room.
-</br>
-</br>
+</br></br>
 
 When the Iliffes first acquired the house, this was the first room they used, moving in with only two deckchairs, and later became Lady Iliffe’s sitting room, returning to the more traditional French layout of being the ‘feminine’ side of the house. Throughout its history, the room has served many purposes, traditionally as the Lady of the House's sitting room for meeting with her guests. The door inside leads to what would then be a private bedroom and dressing room but has been reconstructed and preserved as a 1950s kitchen. It was early in the National Trust’s ownership of the house that this room was used as an Estate Office before being used to display Sutherland’s work. While the work of Sutherland is very important to the use of the room, now interpretations should also focus more on telling the history of the room and not letting it be purely overshadowed by the artwork that the visitor is left to wander what the room is and would have been clueless if they did not see the small booklet in the room. Even in the booklet, not much information is given about the room, thereby hiding the more ‘feminine’ part of the house from the visitors' experience.
 </p>
+<script>
+const video = document.getElementById("video");
+
+video.muted = true;
+
+video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+});
+</script>
   </body>
 </html>

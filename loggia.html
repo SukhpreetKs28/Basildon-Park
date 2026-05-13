@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Loggia</title>
     <style>
-      body {
+    body {
         background: radial-gradient(circle, #c6fca2, #e3ee7f);
         text-align: center;
       }
-      p {
+      .mainImg {
+       
+        border-radius: 10px;
+      }
+       p{
         font-size: 16px;
         width: 80%;
         height: auto;
@@ -22,7 +26,7 @@
         margin: 0 auto;
       
       }
-      .topBar {
+       .topBar {
         
         width: 40%;
         height: auto;
@@ -36,9 +40,30 @@
         display: flex;
   justify-content: center;
   gap: 40px;
-      
       }
-      
+      img{
+  width: 300;
+}
+video{ 
+    image-rendering: auto;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+}
+.medialeft{
+  float: left;
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+.mediaright{
+  float: right;
+    width: 300px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    }
     </style>
   </head>
   <body>
@@ -54,13 +79,13 @@
     </a>
     </div>
     
-    <img src="https://superscout.ai/wp-content/uploads/2025/09/C412-19R-1-2-1024x669.jpg" alt="Loggia Pride and Prejudice Image" />
+    <img class="mainImg" src="https://superscout.ai/wp-content/uploads/2025/09/C412-19R-1-2-1024x669.jpg" alt="Loggia Pride and Prejudice Image" />
     
     <p>The central archway in the basement leads to a shadowed vestibule flanked by Doric columns and pilasters that opens up to the Lower Hall, an entrance used for everyday use but to enter the house, you ascend to the principal storey through a double flight of stairs to the Loggia with Columns of soft golden Bath stone standing tall, giving an outward view towards the parkland, a key part in the performance of wealth that Sykes wanted to portray with the Palladian-style building. By introducing the Staircases at Basildon inside the portico, Carr was providing the visitors with protection from the elements when moving between their carriages and the house. The openness of the view is a main feature of the outside of the house, where you can stand in the pinnacle of wealth and be a small step away from the surrounding woodland and landscape.
-</br>
+</br><img class="mediaright" width="300" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaXe8PdMOTgZc3QIY6-XgfiKS6YybZUHukVw&s"/>
 </br>
 The Loggia portrays the neoclassical ideals of harmony and visual order, as seen in the symmetry of the four columns, which echo Italian influence. Its open design allowed light and landscape to become one with the house's architectural experience, blurring the boundary between the interior refinement and the surrounding countryside. It is more than a simple passageway; it shapes how visitors experience movement, landscape and status within the country house environment.
-</br>
+</br><img class="medialeft" width="300" src="Basildon Park img/20260421_110004.jpg"/>
 </br>
 18th-century estates were designed to project wealth, control, and their own sense of elite sophistication, with the Loggia functioning as a platform through which the surrounding countryside became part of the architectural design itself, emphasising the overall elite taste and authority that the house is meant to perform. As such, the Loggia became a semi-transitional public space that encouraged more leisurely movement, conversation, and visual appreciation among its visitors. Unlike the rest of the house, this offered a more relaxed environment while still upholding the expectations of social hierarchy and refinement. This can also be seen in the 2005 Pride and Prejudice movie, where the Bennet family is seen escaping a ball for the elite to gather on the Loggia for a breath of fresh air.
 </br>
@@ -68,7 +93,16 @@ The Loggia portrays the neoclassical ideals of harmony and visual order, as seen
 Unlike the rest of the House, the Loggia has been largely untouched by reconstructive efforts, whereby most of the restorative movement you can see is through the landscape of the countryside that can be seen from the balcony, through the careful work of servants. The efforts of these servants and now volunteers to maintain the landscape and curate it to suit the wealthy ideals of landscaping offer a parallel between the elites, untouched by manual labour, who watch from afar the servants' efforts to maintain the land for them. Interpretation of the Loggia should therefore focus on the labour, planning, and social power that come from maintaining and constructing this rural environment, so that visitors can see the Loggia as more than a decorative architectural feature and as a representative of the system of elite control.
 </p>
 </br></br>
+<script>
+const video = document.getElementById("video");
 
+video.muted = true;
+
+video.addEventListener("volumechange", () => {
+    video.muted = true;
+    video.volume = 0;
+});
+</script>
   
   </body>
 </html>
