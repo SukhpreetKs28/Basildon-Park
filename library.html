@@ -3,18 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Library</title>
+    <title>The Library</title>
     <style>
       body {
-        background: radial-gradient(circle, #c6fca2, #e3ee7f);
+        background: radial-gradient(circle, #59863b, #7a832f);
         text-align: center;
       }
       .mainImg {
         width: 70%;
         border-radius: 10px;
+        padding: 25px;
       }
        p{
-        font-size: 16px;
+        font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
@@ -28,10 +29,10 @@
       }
        .topBar {
         
-        width: 40%;
+        width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #A7B341;
+         background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,6 +41,18 @@
         display: flex;
   justify-content: center;
   gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
       }
       img{
   width: 300;
@@ -51,7 +64,7 @@ video{
 }
 .medialeft{
   float: left;
-    width: 300px;
+    width: 400px;
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -59,42 +72,93 @@ video{
 }
 .mediaright{
   float: right;
-    width: 300px;
+    width: 400px;
     margin-left: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
     }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
     </style>
   </head>
   <body>
-    <h1>Library</h1>
-   <div class="topBar">
-<a href="index.html">
-      Back to Main Page                
-    </a>
-    
-    <a href="firstfloor.html">
-      Go to First Floor
-    </a>
+    <h1>The Library</h1>
+  <div class="topBar">
+      <a href="index.html">Main Page</a>
+
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
     </div>
       <img class = "mainImg" src="https://i0.wp.com/www.getreadyforadventure.com/wp-content/uploads/2024/05/england-national-trust-basildon-park-interior-library.webp?resize=960%2C540&ssl=1"/>
     <p>To the left of the Entrance Hall, you will find the Library, a place recognisable due to its appearance in Downton Abbey. As soon as you step foot into the room, you fall away from the light and airy colours of the entrance hall and step into a room with red walls, mahogany and patterned furniture and a wall of old books. The library was the traditional male preserve in the 18th century, and this stayed the case at Basildon for the Sykes, Morrisons and Iliffes. Its position in the house was on the west side, also known as the ‘masculine’ side, so that evening light would be prolonged, allowing for late-night reading. These were balanced out by the ‘feminine’ side of the house in the South West, comprising Lady Sykes’ bedroom and dressing rooms. These opposing sides mimicking the French arrangement were carried on by the Illiffe with the Blue Drawing Room on the opposing side of the Entrance Hall, belonging to Lady Illiffe.
-</br><video class="mediaright" height="300" controls autoplay muted loop id="video">
+</br>
+</br>
+<video class="mediaright" height="500" controls autoplay muted loop id="video">
     <source src="Basildon Park img/20260421_110653.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-</br>
-
 In the original 18th-century design, the room would have been linked with a dressing room, which has now been changed into a cloakroom. In addition, the library ceiling is known to resemble the Entrance Halls design, but was unfortunately destroyed in 1946 in a fire that began in the bedroom above. There are still scorch marks that can be seen on the floorboards near the door from when the ceiling plasterwork collapsed, leaving only Carr’s frieze (long horizontal band of decoration) of neo-classical griffins to survive. In the 19th century, the room was known to be decorated with 70 yards of green Utrecht Velvet, including the curtains. There was also an Etruscan fender and two carved oak cornices with gold moulding and ornamentation present. The Library was also home to a few of Morrisons' paintings, including Rembrandt’s portrait of Hendrickje Stoffels, which is now featured in the National Gallery, and is now home to two paintings Lord Illiffe acquired in 1955 from Colnaghi’s.
 </br>
 </br>
-<img class="medialeft" width="300" src="https://www.sceen-it.com/Service/sceenit/sceen/thumb/4259.jpg/w/600/h/340/crop/true/nos/33907_09_DowntonAbbey_Basildon%20Park%20The%20Library%2001.jpg"/>
+
 The current appearance of the room is to the visual testament of the Illiffe’s restoration in the 1950s with the outstanding colour of the room being designed by Lady Illiffe, ‘it was one coat of ochre, followed by one coat of bright red, rubbed together and one coat of dark beer to weather it’,<em>(Lady Illiffe)</em>, used to created a more masculine feeling to the room, amplified by Lord Illiffe’s addition of a mahogany desk in front of the bookcase brought over from another house. This is a great change from the lining paper that the room used to be covered in. When the Illiffes still lived in the main house, the library was home to Lord Illiffe’s collection of old books he had collected throughout his life. These were later moved to the South Pavilion when the house was given to the National Trust and later sold after Lady Illiffe’s death, and what wasn’t is left on the shelves of the library. Most of the Library was restored using materials brought from the soon-to-be-demolished Panton Hall in Lincolnshire, such as the chimneypiece, doorcase, dado rail, and bookcase, and through the stripping of paint, which revealed exquisite carved detail. A particularly drawn piece is the gilt overmantel mirror with four caryatid figures supporting an arched top that rests above the fireplace, exposing the casual extravagance even in a room made for the comfort of reading.
 </br>
 </br>
-
+<img class="medialeft" width="300" src="https://www.sceen-it.com/Service/sceenit/sceen/thumb/4259.jpg/w/600/h/340/crop/true/nos/33907_09_DowntonAbbey_Basildon%20Park%20The%20Library%2001.jpg"/>
 The library's most popular use today has been through the filming of various shows and films. A few key ones are; 2005 Pride and Prejudice as the setting of Netherfield Park Ball where Elizabeth hid in this room, 2011 Wedding Video a comedy featuring a wedding documentary where the room is shown in a house tour, Downton Abbey <em>(Season 4, Episode 9/Season 5, Episode 8)</em> where house featured as the London Residence of Lord and Lady Grantham, Both seasons of Belgravia and 2019 The Gentleman. Interpretations of this room should focus on the exclusionary feel of this room as a ‘masculine’ space, emphasising who had the right to the intellectual retreat such a space offers, as well as highlighting it as a symbol of elite education and cultural authority. The reconstructive nature of the room should also draw attention to why certain aspects were selectively recreated to reflect ideals of the past, rather than the room being a complete attempt to preserve an untouched history.
 </p>
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
 <script>
 const video = document.getElementById("video");
 
@@ -103,6 +167,35 @@ video.muted = true;
 video.addEventListener("volumechange", () => {
     video.muted = true;
     video.volume = 0;
+});
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
+
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
+});
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
 });
 </script>
   </body>

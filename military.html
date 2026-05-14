@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Military History</title>
+<style>
+    body {
+        background: radial-gradient(circle, #59863b, #7a832f);
+        text-align: center;
+      }
+      .mainImg {
+        width: 70%;
+        border-radius: 10px;
+        padding: 25px;
+      }
+       p{
+        font-size: 24px;
+        width: 80%;
+        height: auto;
+        padding: 20px;
+         background-color: #dfe988;
+        border: 2px solid #b3f786;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 0 auto;
+      
+      }
+       .topBar {
+        
+        width: 100%;
+        height: auto;
+        padding: 10px;
+         background-color: #c9d655;
+        border: 2px solid #b3f786;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 0 auto;
+        display: flex;
+  justify-content: center;
+  gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
+      }
+      img{
+  width: 300;
+}
+
+.medialeft{
+  float: left;
+    width: 700px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+
+}
+.mediaright{
+  float: right;
+    width: 700px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
+    </style>
+</head>
+<body>
+    <h1>Military History</h1>
+    <div class="topBar">
+      <a href="index.html">Main Page</a>
+
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
+    </div>
+    <img class = "mainImg" src="https://www.nationaltrustimages.org.uk/AssetLink/8bi7h1p0q43158860soipbf8odyo2653.jpg"/>
+<p><img class="medialeft" width="300"  src="https://www.nationaltrustimages.org.uk/AssetLink/a8m8s3l5kf0c23mjuc0fiylnb6n6c81b.jpg"/>Basildon was turned into a 50-bed convalescent home during World War One, housing officers of the Grenadier Guards and the White House in Lower Basildon, which housed local men of all ranks, with a training centre being established in the park for disabled soldiers and sailors to learn various trades. Patients' records can be found in the National and local archives for those injured who stayed at the House during this time. 60 members of the Women’s Land Army ran the estate, producing a large number of goods for consumption in the hospitals; they were also involved in charcoal burning and brickmaking. Archie Morrison, who returned to active duty as a Grenadier Guards Captain, supported these ventures with his personal fortune, but it was after the failure of his marriage that he sold the contents and, in 1929, the estate.
+</br>
+</br>
+During WW2, Basildon was requisitioned in 1940, with Canadian soldiers arriving first, where they were seen shooting at tree trunks to know ‘how big a tree they had to get behind before they were safe from a bullet’. The house was used as the soldiers' training ground and suffered extensive damage to its interiors and grounds, most notably the fire that broke out in what was the Mess Room or, as we know it, Lady Iliffe’s Bedroom. The house served as a base for Easy Company of the 101st Airborne Division  <em>(the legendary “Band of Brothers”)</em> as they prepared for D-Day. Some of the damage left behind included graffiti on walls, with messages, drawings, and names of those who would be heading to Normandy. While this was restored, the National Trust preserved some examples as a reminder and proof of this period in the house's history.
+</br>
+</br>
+After the Americans left in 1944, the house was taken over by officers in charge of prisoners of war who were billeted in huts in the woodland, and was later used to house labourers working on the construction of the Harwell Atomic Energy Research Establishment. Ferdinando’s children attempted to carry out some repairs after his death, but it was clear it was a rapidly losing battle, so after the house was de-requisitioned in 1952, it was taken over by the Iliffe family. By the time they departed, almost every window was broken, lead had been stripped from the roof, causing a collapse in the Staircase Hall, and many of the interior and architectural features had been destroyed, in addition to the damage the parkland suffered as it was used for tank training and other training exercises. This period of the house's history marked the shift from representing elite domestic life to serving as a home for soldiers grappling with death. The repurposing of the house also showed how its functional adaptability can be replicated in interpretations of the heritage to echo these sentiments.
+</p>
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
+<script>
+
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
+
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
+});
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+</script>
+</html>

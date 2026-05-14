@@ -5,16 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dining Room</title>
     <style>
-       body {
-        background: radial-gradient(circle, #c6fca2, #e3ee7f);
+    body {
+        background: radial-gradient(circle, #59863b, #7a832f);
         text-align: center;
       }
       .mainImg {
         width: 70%;
         border-radius: 10px;
+        padding: 25px;
       }
        p{
-        font-size: 16px;
+        font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
@@ -28,10 +29,10 @@
       }
        .topBar {
         
-        width: 40%;
+        width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #A7B341;
+         background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,6 +41,18 @@
         display: flex;
   justify-content: center;
   gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
       }
       img{
   width: 300;
@@ -51,7 +64,7 @@ video{
 }
 .medialeft{
   float: left;
-    width: 300px;
+    width: 400px;
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -59,25 +72,73 @@ video{
 }
 .mediaright{
   float: right;
-    width: 300px;
+    width: 400px;
     margin-left: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
     }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
     </style>
   </head>
   <body>
     <h1>Dining Room</h1>
 <div class="topBar">
-<a href="index.html">
-      Back to Main Page                
-    </a>
-    
-    <a href="firstfloor.html">
-      Go to First Floor
-    </a>
-    </div><img class = "mainImg" src="Basildon Park img/20260421_114027.jpg"/>
-    <p><img class="mediaright" height="300" src="https://www.nationaltrustimages.org.uk/AssetLink/650ats4vng6850ih257x882mvp7k162b.jpg"/>The Dining Room is one of the House's most impressive feats of lavishness and the status of the Upper Class. As someone who had recently amassed great wealth from his ventures in the East India Company, having this room would show off his new elevated status and social prowess. John Carr designed this room according to the established rules of the 18th century, when formal dining was a new practice but was rapidly being adopted by the upper class. When you walk into the room, you are met with two symmetrical Scagliola columns that frame the long dining table, decorated with silverware and plates, representing the formal dining setup. Before this, no room was dedicated to ‘dinner’; it was mainly used for great occasions and entertainment, whereas family meals were taken in the Green Drawing Room instead. 
+      <a href="index.html">Main Page</a>
+
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
+    </div>
+    <img class = "mainImg" src="Basildon Park img/20260421_114027.jpg"/>
+    <p><img class="mediaright" height="400" src="https://www.nationaltrustimages.org.uk/AssetLink/650ats4vng6850ih257x882mvp7k162b.jpg"/>The Dining Room is one of the House's most impressive feats of lavishness and the status of the Upper Class. As someone who had recently amassed great wealth from his ventures in the East India Company, having this room would show off his new elevated status and social prowess. John Carr designed this room according to the established rules of the 18th century, when formal dining was a new practice but was rapidly being adopted by the upper class. When you walk into the room, you are met with two symmetrical Scagliola columns that frame the long dining table, decorated with silverware and plates, representing the formal dining setup. Before this, no room was dedicated to ‘dinner’; it was mainly used for great occasions and entertainment, whereas family meals were taken in the Green Drawing Room instead. 
 </br>
 </br>
 
@@ -86,7 +147,7 @@ The plasterwork, mouldings, columns, and frieze are Carr’s original work, with
 </br>
 
 In 1845, Morrison adapted the dining room to a more Victorian style, adding gilt elements, and replaced these paintings with darker polychrome panels depicting scenes from Dante’s <em>Divine Comedy</em>. It was between both World Wars that significant change came. In 1929, George Ferdinando brought the house with the intention to sell it in America but failed; he removed and sold the chimneypiece, doors, door-cases, mirrors, some of the plasterwork, and paintings from Morrisons' collection, including the painted roundels, this was with the intention of showing off quality and style of the decorations at the house possibly to further his own status of importance. These were found to be sold to the Waldorf Astoria Hotel in New York, where they were used to create the ‘Basildon Room’.
-</br><img class="mediaright" width="300" src="Basildon Park img/20260421_111836.jpg"/>
+</br><img class="mediaright" width="auto" src="Basildon Park img/20260421_111834.jpg"/>
 </br>
 
 When the Army drew an inventory of Basildon in 1940, they noted that the walls were ‘newly distempered … marking of previous decorative panels which had been removed, showing through distemper.’ By the 1950s, nearly every run of moulding in the Dining Room had missing parts, and it was in 1952 that the Iliffes decided to convert the room into a drawing room and painted it turquoise blue. Graham Rust painted a set of grisailles (a painting technique using shades of grey) for the wall panels that matched a set the original painter had made in a dining room at Farnley Hall, Yorkshire. They brought the chimneypiece from Panton Hall as well as a Neo-classical grate and fender from Brockenhurst Park, and recovered 17 of Carr’s original doors in the boiler room that Ferdinando failed to sell. Even the curtains shown are dated as 19th-century silk damask curtains that were purchased in a sale at Ashburnham Palace, ‘giving a settled look that could not have been achieved with new ones.’
@@ -99,5 +160,41 @@ When the house was given to the National Trust, the room was changed back to its
 
 Interpretations of this room should focus on discussions of the colonial trade system that supplied the luxury goods that were used for these rooms, such as Sykes porcelain plates, and how these shaped elite dining culture. They should also mention the invisible labour of the servants who had to transport meals throughout the house and their duties in this room. As well as paying attention to the reconstructed character of the room, and encouraging visitors to question how these heritage spaces choose to recreate aspects of aristocratic life.
 </p>
-  </body>
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
+<script>
+
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
+
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
+});
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+</script>  
+</body>
 </html>
