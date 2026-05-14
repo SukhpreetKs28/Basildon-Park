@@ -5,17 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green Drawing Room</title>
     <style>
-     body {
-        background: radial-gradient(circle, #c6fca2, #e3ee7f);
+       body {
+        background: radial-gradient(circle, #59863b, #7a832f);
         text-align: center;
       }
-      .mainImg {
+   .mainImg {
         width: auto;
         border-radius: 10px;
         max-height: 900px;
+        padding: 25px;
       }
        p{
-        font-size: 16px;
+        font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
@@ -29,10 +30,10 @@
       }
        .topBar {
         
-        width: 40%;
+        width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #A7B341;
+         background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,6 +42,18 @@
         display: flex;
   justify-content: center;
   gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
       }
       img{
   width: 300;
@@ -52,7 +65,7 @@ video{
 }
 .medialeft{
   float: left;
-    width: 300px;
+    width: 400px;
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -60,25 +73,72 @@ video{
 }
 .mediaright{
   float: right;
-    width: 300px;
+    width: 400px;
     margin-left: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
     }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
     </style>
   </head>
   <body>
     <h1>Green Drawing Room</h1>
-    <div class="topBar">
-<a href="index.html">
-      Back to Main Page                
-    </a>
-    
-    <a href="firstfloor.html">
-      Go to First Floor
-    </a>
+<div class="topBar">
+      <a href="index.html">Main Page</a>
+
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
     </div><img class = "mainImg" src="Basildon Park img/20260421_115303.jpg"/>
-    <p><img class="medialeft" width="300" height="400" src="Basildon Park img/20260421_115306.jpg"/><img class="mediaright" width="300" height="400" src="Basildon Park img/20260421_115322.jpg"/>The Green Drawing Room is a space that was formed as a part of the more ‘feminine’ or family side of the house and was inaccessible until the restoration works in the Octagon Room. Used by both Sykes and Morrisons as a breakfast and parlour room and as a dining room for the Iliffes from 1952 to 1977 till it was eventually turned back into a drawing room by the National Trust. Other family suites would comprise of; the Sutherland Room (Sitting Room), 1950’s Kitchen (Bedroom) and Volunteer’s Room (dressing room).
+    <p><img class="medialeft" width="200" height="600" src="Basildon Park img/20260421_115306.jpg"/><img class="mediaright" width="200" height="600" src="Basildon Park img/20260421_115322.jpg"/>The Green Drawing Room is a space that was formed as a part of the more ‘feminine’ or family side of the house and was inaccessible until the restoration works in the Octagon Room. Used by both Sykes and Morrisons as a breakfast and parlour room and as a dining room for the Iliffes from 1952 to 1977 till it was eventually turned back into a drawing room by the National Trust. Other family suites would comprise of; the Sutherland Room (Sitting Room), 1950’s Kitchen (Bedroom) and Volunteer’s Room (dressing room).
 </br>
 </br>
 This room is one of the only rooms of the house that retains its original Georgian ceiling designed by Carr, with its colour scheme of pink and green being recognisable despite no gilding. The ceiling reflects the style of Richardson from his book, <em>‘Books of ceilings’</em>, with the rectangular bands of ornaments on either end depicting the heads of Roman emperors. The main difference in the design of this room is the placement of the door, which reflects Neoclassical ideals and makes the room more symmetrical.
@@ -91,5 +151,41 @@ This room also features the house's original chimneypiece sculpted by Richard We
 
 Interpretations for this room should reflect on the staged setting put in place by the National Trust and its owners as something that portrays its sociability, femininity and leisure within a country house. While these rooms reflect comfort, it's important to think about the labour that goes into making them look as they do and retaining them, and to think about which aspects reflect the room as a modern heritage reconstruction and which you would deem authentic.
 </p>
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
+<script>
+
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
+
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
+});
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+</script> 
   </body>
 </html>

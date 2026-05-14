@@ -5,16 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entrance Hall</title>
     <style>
-      body {
-        background: radial-gradient(circle, #c6fca2, #e3ee7f);
+       body {
+        background: radial-gradient(circle, #59863b, #7a832f);
         text-align: center;
       }
-      .mainImg {
-        width: 70%;
+        .mainImg {
+        width: auto;
         border-radius: 10px;
+        max-height: 900px;
+        padding: 25px;
       }
        p{
-        font-size: 16px;
+        font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
@@ -28,10 +30,10 @@
       }
        .topBar {
         
-        width: 40%;
+        width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #A7B341;
+         background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -40,6 +42,18 @@
         display: flex;
   justify-content: center;
   gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
       }
       img{
   width: 300;
@@ -51,7 +65,7 @@ video{
 }
 .medialeft{
   float: left;
-    width: 300px;
+    width: 400px;
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -59,24 +73,71 @@ video{
 }
 .mediaright{
   float: right;
-    width: 300px;
+    width: 400px;
     margin-left: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
     }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
     </style>
   </head>
   <body>
     <h1>Entrance Hall</h1>
   
-    <div class="topBar">
-<a href="index.html">
-      Back to Main Page                
-    </a>
-    
-    <a href="firstfloor.html">
-      Go to First Floor
-    </a>
+  <div class="topBar">
+      <a href="index.html">Main Page</a>
+
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
     </div>
     <img class = "mainImg" src="https://www.theenglishhome.co.uk/_gatsby/file/1c8a93c06e15a911b870ca220e7a0550/13166_new-Entrance-Hall-1290662.jpg"/>
     <p>Once you enter through the Double doors of the Loggia, you enter a vastly different space, a hall full of extravagance designed to impress. Throughout its life, the Entrance hall has set the expectations for the house for visitors and served as a link between the exterior and the interior of the house and parkland, as well as served for grand entertainments that were popular in country-house life in the 18th Century. The Hall is the first of many richly decorated rooms in the centre of the house, such as the Octagon Room. When you enter, you are greeted by the volunteers of the National Trust, who discuss the four main owners of the house with you and direct you where to go to follow the flow of the house.
@@ -101,15 +162,41 @@ The original plasterwork, which featured elements of diamond-patterned bands, pl
 The Iliffes contributed significantly to how the house is now presented by the National Trust, offering ‘A 20th -century imaging of the past’ by rescuing furnishings from other houses that were not restored to reflect the original arrangement of the hall in the 18th century. Interpretations of this room should focus on the layered space shaped by loss, intervention, and the curators' choices, such as the Iliffes, and should reflect the differences and challenges that went into reconstructing it to echo the Georgian style. This would allow visitors to reflect on which aspects of the house are genuinely from the 18th century, and which are from modern reconstruction.
 </p>
 </br></br>
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
 <script>
-const video = document.getElementById("video");
 
-video.muted = true;
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
 
-video.addEventListener("volumechange", () => {
-    video.muted = true;
-    video.volume = 0;
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
 });
-</script>
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+</script>  
 </body>
 </html>

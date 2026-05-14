@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bamboo Dressing Room</title>
     <style>
-  body {
-        background: radial-gradient(circle, #c6fca2, #e3ee7f);
+   body {
+        background: radial-gradient(circle, #59863b, #7a832f);
         text-align: center;
       }
-      .mainImg {
+        .mainImg {
         width: auto;
         border-radius: 10px;
         max-height: 900px;
+        padding: 25px;
       }
-       p{
-        font-size: 16px;
-        width: 80%;
+       .mainbody{
+        font-size: 24px;
+        width: 70%;
         height: auto;
-        padding: 20px;
+        padding: 30px;
          background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
@@ -27,12 +28,24 @@
         margin: 0 auto;
       
       }
+      .maintext{
+        font-size: 24px;
+        width: 50%;
+        height: auto;
+        padding: 30px;
+         background-color: #dfe988;
+        border: 2px solid #b3f786;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin: 30px auto 0;
+      }
        .topBar {
         
-        width: 40%;
+        width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #A7B341;
+         background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,6 +54,18 @@
         display: flex;
   justify-content: center;
   gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
       }
       img{
   width: 300;
@@ -52,7 +77,7 @@ video{
 }
 .medialeft{
   float: left;
-    width: 300px;
+    width: 400px;
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -60,41 +85,121 @@ video{
 }
 .mediaright{
   float: right;
-    width: 300px;
+    width: 400px;
     margin-left: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
     }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
     </style>
   </head>
   <body>
     <h1>Bamboo Dressing Room</h1>
     <div class="topBar">
-      <a href="index.html"> Back to Main Page </a>
+      <a href="index.html">Main Page</a>
 
-      <a href="secondfloor.html"> Go to Second Floor </a>
-    </div><img class = "mainImg" src="Basildon Park img/20260421_120545.jpg"/>
-    <p><img class="medialeft" src="Basildon Park img/20260421_120407.jpg"/>Set behind the columns of the Loggia, the view from the window reveals the finely carved Roman Ionic capitals atop the columns, possibly based on Piranesi's engravings. This room was primarily used as a dressing room that has been turned into a small guest bedroom by the Iliffes and was once used in the 2019 Documentary ‘The Windsors’.
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
+    </div>
+    <img class = "mainImg" src="Basildon Park img/20260421_120545.jpg"/>
+    <p class="mainbody"><img class="medialeft" src="Basildon Park img/20260421_120407.jpg"/>Set behind the columns of the Loggia, the view from the window reveals the finely carved Roman Ionic capitals atop the columns, possibly based on Piranesi's engravings. This room was primarily used as a dressing room that has been turned into a small guest bedroom by the Iliffes and was once used in the 2019 Documentary ‘The Windsors’.
 </br>
-</br><video class="mediaright" height="300" controls autoplay muted loop id="video">
-    <source src="Basildon Park img/20260421_120606.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+</br>
 A feature of the room is a Chinese six-leaf Coromandel Screen that was once 12 panels and depicted <em>‘An Elegant Gathering in the Western Gardens’</em>, a famous event in Chinese literature. According to the legend, a group of 16 famous statesmen, literati and artists gathered in the Western Garden of Wang Shen. One of the artists of the period wrote an account commemorating the experience on one side, while the front shows illustrations of the gathering. As only half of the panels are present, it is impossible to know the full story and information of the piece, and, as it would only be significant to someone with an understanding of Chinese literature, it raises questions about its significance here beyond notions of imperial control. The Regency lit bateau (boat-shaped bed) is seen to be draped with muslin hangings in an Anglo-Indian style that is copied from contemporary paintings and drawings. There is also a small empire seat that was donated to a wartime sale to raise funds for the Red Cross. Interpretations should depict the Room as a space that explores Britain's fascination with Asian aesthetics and how the colonial trade networks have founded a change in global goods into a fashionable symbol of status.</p>
 </br>
 </br>
+<br>
 <h1> The Red Bathroom</h1>
-<p>
+<p class="maintext"><video class="mediaright" height="450" controls autoplay muted loop id="video">
+    <source src="Basildon Park img/20260421_120606.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 This room also links to the Red Bathroom, a bizarre-looking room that is one of the modern features of the house that stands out, whose purpose was to modernise the house that initially only had one bathroom to make it more suitable for 1950s living. This is a pattern they did for other little rooms that were much too small for anything else. Interpretations here should mention this room as evidence of changing ideas surrounding luxury, hygiene, and modernity within aristocratic life and show how technological advancements have crept into a country house and reshaped everyday routines. This room is a part of Basildon’s layered history, and demonstrates how restoration and adaptations can alter and confuse the distinctive lines between original historical material and later 20th-century reconstruction.</p>
  
- <script>
-const video = document.getElementById("video");
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
+<script>
 
-video.muted = true;
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
 
-video.addEventListener("volumechange", () => {
-    video.muted = true;
-    video.volume = 0;
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
 });
-</script></body>
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+</script>  
+</body>
 </html>

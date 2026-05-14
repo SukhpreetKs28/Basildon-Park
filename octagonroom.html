@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Octagon Room</title>
     <style>
-  body {
-        background: radial-gradient(circle, #c6fca2, #e3ee7f);
+ body {
+        background: radial-gradient(circle, #59863b, #7a832f);
         text-align: center;
       }
       .mainImg {
         width: 70%;
         border-radius: 10px;
-        
+        padding: 25px;
       }
        p{
-        font-size: 16px;
+        font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
@@ -29,10 +29,10 @@
       }
        .topBar {
         
-        width: 40%;
+        width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #A7B341;
+         background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,6 +41,18 @@
         display: flex;
   justify-content: center;
   gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
       }
       img{
   width: 300;
@@ -52,7 +64,7 @@ video{
 }
 .medialeft{
   float: left;
-    width: 300px;
+    width: 400px;
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -60,32 +72,79 @@ video{
 }
 .mediaright{
   float: right;
-    width: 300px;
+    width: 400px;
     margin-left: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
     }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
     </style>
   </head>
   <body>
     <h1>Octagon Room</h1>
     <div class="topBar">
-<a href="index.html">
-      Back to Main Page                
-    </a>
-    
-    <a href="firstfloor.html">
-      Go to First Floor
-    </a>
+      <a href="index.html">Main Page</a>
+
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
     </div>
     <img class="mainImg" src="https://www.nationaltrustimages.org.uk/AssetLink/hnayc6f741146c76fg1dqxc0p2x53c4i.jpg"/>
     <p>This room is one of the house's unique features, with its unusual architectural design marking it as the most striking of the grand reception rooms. When the house was first built in 1776, the layout was split into an entertainment side and the family side. This room function was to entertain and had a warm tone to the room's atmosphere set by a large fire. Sadly, this room was never finished by Sykes and Carr due to insufficient funds, and this was formally declared in the 1829 Bill of Sale.
-</br><img class="mediaright" height="300" src="https://www.nationaltrustimages.org.uk/AssetLink/ms2u20e0gjoioc17ubi046l11q06msxy.jpg"/>
+</br><img class="mediaright"  src="https://www.nationaltrustimages.org.uk/AssetLink/ms2u20e0gjoioc17ubi046l11q06msxy.jpg"/>
 </br>
 
 Carr often included a range of novel-shaped rooms in his plans for country houses, a characteristic of the Palladian style. The room's location at the back of the house, looking out into the garden, enabled Carr to incorporate a canted bay into his design. In 1859, when Morrison bought the house, the room was finished with an ornate Victorian ceiling that reflected the Italian 16th Century. As the room was undecorated, Morrison decided to place the best of his Old Master paintings from his collection, as well as an opportunity to introduce a complete 19th-century decorative scheme that reflected his tastes and the popular trends of the period. This led Papworth to cover the walls in purple velvet, gilt papier-mâché strips at the angles of the room, and to install a fireplace, a rather large contrast in colouring to the now red it displays. Some of the paintings he displayed were by the ‘most distinguished modern English painter’, such as Turner, Constable, Hogarth, and Richard Wilson, and these were linked thematically to the room's entertainment function. 
-</br><img class="medialeft" width="300" src="Basildon Park img/20260421_115054.jpg"/>
 </br>
+</br><img class="medialeft" width="300" src="Basildon Park img/20260421_115054.jpg"/>
 
 The Iliffes decided to redecorate the Octagon room, but took into account that what they chose had to harmonise with the elaborate ceiling left by Morrison. While wanting to preserve the 19th-century feel, they also wanted to suggest what the room may have been like during Sykes's time in the 18th century, but as Carr hadn’t completed the room, there was not much for them to go on to make it authentic. After initially covering the walls with white and gold paper, they recovered the room in 1954 with the felt now seen to this day, ‘plucked up the courage… put the felt on the wall and stretched it ourselves’. The choice of felt was due to the constraints rationing still being felt from the war, meaning there was very little material available. The colour was chosen for its popularity in the 18th Century as a background for paintings, the perfect choice for a room full of paintings, although they still used the room as their drawing room despite it housing their finest paintings. The room contained pieces recovered from many country-house sales, such as the silk curtains made in 1773 and an 18th-century ear harp piano. Another feature of this room is a pair of Neo-classical gilt pier-tables and mirrors of the 1780s that are from Brockenhurst Park and were sold in 1956, which Francis Egerton of Mallet acquired and placed in this room. The tables have marquetry tops that are supported by female figures based on those on the Erechtheum on the Acropolis at Athens. It was later that the National Trust preserved the room by placing an identical carpet on top of the 100-year-old carpet that is underneath in order to protect it while keeping the look the same as it was through the designs of its owners.
 </br>
@@ -97,6 +156,41 @@ The paintings are by far the most important aspect of this room, which features 
 
 This room is an example of the use of repurposing and attempting to make the room authentic to reflect a certain era of time. Interpretations of this room need to address the presumed attempt at authenticity and what that means for visitors. The room’s 20th-century restoration under Lord Iliffe draws attention to reconstructed details that may appear ‘original’. It thereby raises the question of asking visitors to reflect on how authenticity is actively curated rather than preserved.
 </p>
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
+<script>
 
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
+
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
+});
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
+});
+</script>  
   </body>
 </html>

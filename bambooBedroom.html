@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bamboo Bedroom</title>
     <style>
-       body {
-        background: radial-gradient(circle, #c6fca2, #e3ee7f);
+          body {
+        background: radial-gradient(circle, #59863b, #7a832f);
         text-align: center;
       }
       .mainImg {
         width: 70%;
-        height: 50%;
         border-radius: 10px;
+        padding: 25px;
       }
        p{
-        font-size: 16px;
+        font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
@@ -29,10 +29,10 @@
       }
        .topBar {
         
-        width: 40%;
+        width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #A7B341;
+         background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -41,6 +41,18 @@
         display: flex;
   justify-content: center;
   gap: 40px;
+  font-size: 20px;
+  font-weight: bold;
+ 
+      }
+h1{
+  font-size: 78px;
+  font-style: italic;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+      a{
+        color: darkgreen
       }
       img{
   width: 300;
@@ -52,7 +64,7 @@ video{
 }
 .medialeft{
   float: left;
-    width: 300px;
+    width: 400px;
     margin-right: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -60,33 +72,90 @@ video{
 }
 .mediaright{
   float: right;
-    width: 300px;
+    width: 400px;
     margin-left: 20px;
     margin-bottom: 10px;
     border-radius: 10px;
     }
+    img {
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+img:hover {
+  transform: scale(1.05);
+}
+
+.fullscreen-modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+}
+
+.fullscreen-modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fullscreen-modal img {
+  max-width: 90%;
+  max-height: 90%;
+  object-fit: contain;
+}
+
+.close-fullscreen {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  font-size: 40px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}
+
+.close-fullscreen:hover {
+  color: #ccc;
+}
     </style>
   </head>
   <body>
     <h1>Bamboo Bedroom</h1>
     <div class="topBar">
-      <a href="index.html"> Back to Main Page </a>
+      <a href="index.html">Main Page</a>
 
-      <a href="secondfloor.html"> Go to Second Floor </a>
-    </div><img class = "mainImg" src="Basildon Park img/20260421_120322.jpg"/>
-    <p><img class="mediaright" width="300"  src="https://www.nationaltrustimages.org.uk/AssetLink/l7bm5qi66s4kitt16x0ad4081rkm2613.jpg"/><img class="medialeft" width="300"  src="https://www.nationaltrustimages.org.uk/AssetLink/rik3467735ymrs3182302lyf327j45gt.jpg"/>
+      <a href="overview.html">What is it?</a>
+      <a href="reconstruction.html">Key Owners</a>
+      <a href="gardens.html">Park Land & Gardens</a>
+      <a href="military.html">Military History</a>
+      <a href="prominence.html">Prominence</a>
+      <a href="firstfloor.html">First Floor</a>
+      <a href="secondfloor.html">Second Floor</a>
+    </div>
+    <img class = "mainImg" src="Basildon Park img/20260421_120322.jpg"/>
+    <p><img class="mediaright" width="300"  src="https://www.nationaltrustimages.org.uk/AssetLink/l7bm5qi66s4kitt16x0ad4081rkm2613.jpg"/>
     The Bamboo Bedroom was a part of a series of suites furnished by the Iliffes to act as guest suites. Compared to the Crimson Room you just left, the Bamboo Bedroom is a polar opposite in colour, with a more cream/white and pink colour scheme, echoing Chinese elements in its design. The wallpaper and paintings were both chosen by Lady Iliffe, while the frieze is an original component of the house; the doorcases, doors and carved wooden chimneypiece all came from Panton Hall, which was designed by Carr.
-</br>
-</br>
-The bed is a survivor of the early 19th Century and was brought from Stoneleigh Abbey due to a disastrous fire and flooding that caused the need for funds to pay for repairs. The bed hangings were damaged and replaced by Lady Iliffe, but the fringe was rescued and reattached. In the cornices of the ceiling, there are still three little pipes coming out of the cornice, which are used for bell pulls similar to the bell pull in the dressing rooms. These were used to summon servants to come to attend to you. The Chinese figures on either bedside table are 19th-century medicine dolls used to indicate the symptoms of patients to their doctor, but have now been repurposed into lamps. The National Trust has continued this theme of Bamboo established by the Iliffes by hanging a large six-fold Rimpa- style Japanese screen depicting 3 white cranes against a golden background.
-</br>
-</br><video class="mediaright" height="300" controls autoplay muted loop id="video">
+</br><video class="medialeft" height="500" controls autoplay muted loop id="video">
     <source src="Basildon Park img/20260421_120248.mp4" type="video/mp4">
     Your browser does not support the video tag.
 </video>
+</br>
+The bed is a survivor of the early 19th Century and was brought from Stoneleigh Abbey due to a disastrous fire and flooding that caused the need for funds to pay for repairs. The bed hangings were damaged and replaced by Lady Iliffe, but the fringe was rescued and reattached. In the cornices of the ceiling, there are still three little pipes coming out of the cornice, which are used for bell pulls similar to the bell pull in the dressing rooms. These were used to summon servants to come to attend to you. The Chinese figures on either bedside table are 19th-century medicine dolls used to indicate the symptoms of patients to their doctor, but have now been repurposed into lamps. The National Trust has continued this theme of Bamboo established by the Iliffes by hanging a large six-fold Rimpa- style Japanese screen depicting 3 white cranes against a golden background.
+</br><img class="mediaright" width="20" height="350" src="https://www.nationaltrustimages.org.uk/AssetLink/rik3467735ymrs3182302lyf327j45gt.jpg"/>
+</br>
+</br>
 The oriental theme is carried on the aquatints on either side of the overmantel glass, from Thomas and William Daniell’s <em>Oriental Scenery</em> . They made multiple views of Indian monuments, which were published between 1795 and 1808. Interpretations for this should show the 18th Century and 19th Century fascination with ‘exotic’ design and global influence, and the in turn influence that had on the styling of the Upper Class. When dealing with furnishings from Asia, it is important to question how these were collected, adapted and displayed as symbols of British wealth, taste and their imperial reach, bringing attention to colonial trade networks that allow access to imported materials while hiding the power struggles behind the extravagance. The room should also bring attention to how these historical attitudes and cultures are used in heritage spaces to create an historical atmosphere that is shaped by modern curatorial decisions.
 </p>
-  <script>
+<div class="fullscreen-modal" id="fullscreenModal">
+  <span class="close-fullscreen">&times;</span>
+  <img id="fullscreenImage" src="" alt="">
+</div>
+<script>
 const video = document.getElementById("video");
 
 video.muted = true;
@@ -94,6 +163,35 @@ video.muted = true;
 video.addEventListener("volumechange", () => {
     video.muted = true;
     video.volume = 0;
+});
+const modal = document.getElementById('fullscreenModal');
+const fullscreenImg = document.getElementById('fullscreenImage');
+const closeBtn = document.querySelector('.close-fullscreen');
+
+// Make all images clickable for fullscreen
+document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
+  img.addEventListener('click', function() {
+    modal.classList.add('active');
+    fullscreenImg.src = this.src;
+  });
+});
+
+// Close fullscreen
+closeBtn.addEventListener('click', function() {
+  modal.classList.remove('active');
+});
+
+modal.addEventListener('click', function(e) {
+  if (e.target === modal) {
+    modal.classList.remove('active');
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    modal.classList.remove('active');
+  }
 });
 </script>
   </body>
