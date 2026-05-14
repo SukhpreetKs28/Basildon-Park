@@ -43,11 +43,85 @@
         text-align: center;
         margin: 30px auto 0;
       }
+      /* ACCESSIBILITY BUTTON */
+#accessibilityToggle {
+  padding: 14px 24px;
+  margin: 20px;
+  border: none;
+  border-radius: 12px;
+  background: #111;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+/* KEYBOARD ACCESSIBILITY */
+a:focus,
+button:focus {
+  outline: 4px solid yellow;
+  outline-offset: 4px;
+}
+
+/* ACCESSIBILITY MODE */
+.accessibility-mode {
+  background: #000 !important;
+  color: #ffff66 !important;
+  font-family: 'Lexend', Arial, sans-serif;
+  line-height: 2;
+  letter-spacing: 1px;
+}
+.accessibility-mode a,
+.accessibility-mode h1{
+  color: yellow !important;
+}
+
+.accessibility-mode p,
+
+.accessibility-mode h2,
+.accessibility-mode li {
+  color: #000000 !important;
+  font-size: 28px;
+}
+
+/* PANELS */
+.accessibility-mode .mainPage,
+.accessibility-mode .topBar {
+  background: #111 !important;
+  border: 3px solid yellow !important;
+}
+
+/* BIGGER BUTTONS */
+.accessibility-mode button,
+.accessibility-mode a {
+  min-height: 44px;
+  padding: 14px;
+}
+
+/* REDUCED MOTION */
+.accessibility-mode *,
+.accessibility-mode *::before,
+.accessibility-mode *::after {
+  animation: none !important;
+  transition: none !important;
+}
+    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
     </style>
   </head>
   <body>
     <h1>First Floor</h1>
-    <div class="topBar">
+    <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
+      Accessibility Mode
+    </button>
+    <div class="topBar" role="navigation" aria-label="Main navigation">
       <a href="index.html">Main Page</a>
 
       <a href="overview.html">What is it?</a>
@@ -8922,5 +8996,78 @@
         </a>
       </g>
     </svg>
+    <script>
+ const accessibilityBtn =
+    document.getElementById(
+      "accessibilityToggle"
+    );
+
+  // LOAD SAVED ACCESSIBILITY MODE
+  function loadAccessibility() {
+
+    const enabled =
+      localStorage.getItem(
+        "accessibility"
+      ) === "enabled";
+
+    if (enabled) {
+      document.body.classList.add(
+        "accessibility-mode"
+      );
+    } else {
+      document.body.classList.remove(
+        "accessibility-mode"
+      );
+    }
+
+    // MAP SUPPORT
+    if (
+      typeof lightMap !== "undefined" &&
+      typeof darkMap !== "undefined"
+    ) {
+
+      if (enabled) {
+
+        if (map.hasLayer(lightMap)) {
+          map.removeLayer(lightMap);
+        }
+
+        darkMap.addTo(map);
+
+      } else {
+
+        if (map.hasLayer(darkMap)) {
+          map.removeLayer(darkMap);
+        }
+
+        lightMap.addTo(map);
+      }
+    }
+  }
+
+  // INITIAL LOAD
+  loadAccessibility();
+
+  // BUTTON TOGGLE
+  accessibilityBtn.addEventListener(
+    "click",
+    () => {
+
+      const currentlyEnabled =
+        document.body.classList.contains(
+          "accessibility-mode"
+        );
+
+      localStorage.setItem(
+        "accessibility",
+        currentlyEnabled
+          ? "disabled"
+          : "enabled"
+      );
+
+      loadAccessibility();
+    }
+  );
+    </script>
   </body>
 </html>
