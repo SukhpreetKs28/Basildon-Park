@@ -9,182 +9,178 @@
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
-   .mainImg {
+      .mainImg {
         width: auto;
         border-radius: 10px;
         max-height: 900px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -194,11 +190,10 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Lady Iliffe's Bedroom</h1>
-     <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
+    <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
       Accessibility Mode
     </button>
     <div class="topBar" role="navigation" aria-label="Main navigation">
@@ -212,147 +207,168 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-   <video class = "mainImg" height="800" controls autoplay muted loop>
-    <source src="Basildon Park img/20260421_121529.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video> 
-    <p><img class="mediaright" width="200" height="600" src="https://www.nationaltrustimages.org.uk/AssetLink/ye6a785lhydekua88c2n014g12c3h8pl.jpg"/>
-     
-      This bedroom, unlike any other, is the only one with an alcove with a decorated ceiling. It resides on the side of the house designated the Regent’s side in Papworth’s plans, suggesting it may have been a main guest bedroom. There is a possible relation to this, as at the time of the regent’s visit in 1813, when it was tenanted by Richard Burroughs, a friend of the regent. The room itself has an inviting atmosphere with its light pink coloured wall, which, considering it was shared by both Lord and Lady Iliffe, is a very progressive fact and was even  used in the filming production of Belgravia in 2019.
-</br>
-</br><video class="medialeft" height="500" controls autoplay muted loop>
-    <source src="Basildon Park img/20260421_121743 - Copy.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-This room is where the fire originated in 1946 under military occupation as a prisoner of war camp, where British soldiers used this room as a sort of mess room. The fire that broke out damaged the floor and ceiling of the Library below, and scorch marks can still be seen on the library floor. When the Iliffes first brought the house, the bedroom wasn’t accessible due to how damaged the floor was. It was only once the floor was repaired that the Iliffes were able to see the room, finally and be surprised that the plasterwork on the ceiling of the alcove was still intact. The room is a reflection of the Iliffes ’ 25-year renovation of the house, portraying the structural renovations and the aesthetic choices made in the endeavour. The room itself features a Chippendale-style mahogany break-front bookcase and a modern shell mirror made by Davies as a gift to Lady Iliffe, as well as a portrait of a young Lady Iliffe at 18.
-</br>
-</br>
-Interpretations of this room should portray how the space reflects both aristocratic comfort and the 20th-century reinvention of the country house, as well as how far the living situations in the house have progressed from traditional French arrangements with the Lord and Lady sleeping separately to now modern arrangements where they share a room. The room reflects changing ideas of gender, domesticity and identity after World War II, thanks to its own transformation after the fire where it was born anew.
-</br>
-</br>
-Lady Illife’s Bathroom is next door to her bedroom and was likely shared too, is one of the little rooms in the house that was converted into a bathroom. The commodes were brought from Liberty’s department store in London, where they were used in the Ladies Cloakroom and had odd features such as flying fish bath taps. There is also a vaulted corridor that leads to a bathroom and the Green Chintz Room in the north-east corner.
-</p>
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
-const videos = document.querySelectorAll('video');
+    <video class="mainImg" height="800" controls autoplay muted loop>
+      <source
+        src="Basildon Park img/20260421_121529.mp4"
+        alt="Video of interior of Lady Iliffe's Bedroom"
+        type="video/mp4"
+      />
+      Your browser does not support the video tag.
+    </video>
+    <p>
+      <img
+        class="mediaright"
+        width="200"
+        height="600"
+        src="https://www.nationaltrustimages.org.uk/AssetLink/ye6a785lhydekua88c2n014g12c3h8pl.jpg"
+        alt="Portrait of Young Lady Iliffe hung in Bedroom"
+      />
 
-videos.forEach(video => {
-  video.muted = true;
-  video.volume = 0;
+      This bedroom, unlike any other, is the only one with an alcove with a
+      decorated ceiling. It resides on the side of the house designated the
+      Regent’s side in Papworth’s plans, suggesting it may have been a main
+      guest bedroom. There is a possible relation to this, as at the time of the
+      regent’s visit in 1813, when it was tenanted by Richard Burroughs, a
+      friend of the regent. The room itself has an inviting atmosphere with its
+      light pink coloured wall, which, considering it was shared by both Lord
+      and Lady Iliffe, is a very progressive fact and was even used in the
+      filming production of Belgravia in 2019.
+      <br />
+      <br /><video class="medialeft" height="500" controls autoplay muted loop>
+        <source
+          src="Basildon Park img/20260421_121743 - Copy.mp4"
+          alt="Video of Lady Iliffe's Bathroom"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      This room is where the fire originated in 1946 under military occupation
+      as a prisoner of war camp, where British soldiers used this room as a sort
+      of mess room. The fire that broke out damaged the floor and ceiling of the
+      Library below, and scorch marks can still be seen on the library floor.
+      When the Iliffes first brought the house, the bedroom wasn’t accessible
+      due to how damaged the floor was. It was only once the floor was repaired
+      that the Iliffes were able to see the room, finally and be surprised that
+      the plasterwork on the ceiling of the alcove was still intact. The room is
+      a reflection of the Iliffes ’ 25-year renovation of the house, portraying
+      the structural renovations and the aesthetic choices made in the
+      endeavour. The room itself features a Chippendale-style mahogany
+      break-front bookcase and a modern shell mirror made by Davies as a gift to
+      Lady Iliffe, as well as a portrait of a young Lady Iliffe at 18.
+      <br />
+      <br />
+      Interpretations of this room should portray how the space reflects both
+      aristocratic comfort and the 20th-century reinvention of the country
+      house, as well as how far the living situations in the house have
+      progressed from traditional French arrangements with the Lord and Lady
+      sleeping separately to now modern arrangements where they share a room.
+      The room reflects changing ideas of gender, domesticity and identity after
+      World War II, thanks to its own transformation after the fire where it was
+      born anew.
+      <br />
+      <br />
+      Lady Illife’s Bathroom is next door to her bedroom and was likely shared
+      too, is one of the little rooms in the house that was converted into a
+      bathroom. The commodes were brought from Liberty’s department store in
+      London, where they were used in the Ladies Cloakroom and had odd features
+      such as flying fish bath taps. There is also a vaulted corridor that leads
+      to a bathroom and the Green Chintz Room in the north-east corner.
+    </p>
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const videos = document.querySelectorAll("video");
 
-  video.addEventListener('volumechange', () => {
-    video.muted = true;
-    video.volume = 0;
-  });
+      videos.forEach((video) => {
+        video.muted = true;
+        video.volume = 0;
 
-  video.addEventListener('play', () => {
-    video.muted = true;
-    video.volume = 0;
-  });
-});
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+        video.addEventListener("volumechange", () => {
+          video.muted = true;
+          video.volume = 0;
+        });
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+        video.addEventListener("play", () => {
+          video.muted = true;
+          video.volume = 0;
+        });
+      });
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>
+        loadAccessibility();
+      });
+    </script>
   </body>
 </html>

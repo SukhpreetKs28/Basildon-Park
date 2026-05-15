@@ -5,198 +5,194 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bamboo Dressing Room</title>
     <style>
-   body {
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
-        .mainImg {
+      .mainImg {
         width: auto;
         border-radius: 10px;
         max-height: 900px;
         padding: 25px;
       }
-       .mainbody{
+      .mainbody {
         font-size: 24px;
         width: 70%;
         height: auto;
         padding: 30px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-      .maintext{
+      .maintext {
         font-size: 24px;
         width: 50%;
         height: auto;
         padding: 30px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 30px auto 0;
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -206,11 +202,10 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Bamboo Dressing Room</h1>
-     <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
+    <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
       Accessibility Mode
     </button>
     <div class="topBar" role="navigation" aria-label="Main navigation">
@@ -224,127 +219,156 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="Basildon Park img/20260421_120545.jpg"/>
-    <p class="mainbody"><img class="medialeft" src="Basildon Park img/20260421_120407.jpg"/>Set behind the columns of the Loggia, the view from the window reveals the finely carved Roman Ionic capitals atop the columns, possibly based on Piranesi's engravings. This room was primarily used as a dressing room that has been turned into a small guest bedroom by the Iliffes and was once used in the 2019 Documentary ‘The Windsors’.
-</br>
-</br>
-A feature of the room is a Chinese six-leaf Coromandel Screen that was once 12 panels and depicted <em>‘An Elegant Gathering in the Western Gardens’</em>, a famous event in Chinese literature. According to the legend, a group of 16 famous statesmen, literati and artists gathered in the Western Garden of Wang Shen. One of the artists of the period wrote an account commemorating the experience on one side, while the front shows illustrations of the gathering. As only half of the panels are present, it is impossible to know the full story and information of the piece, and, as it would only be significant to someone with an understanding of Chinese literature, it raises questions about its significance here beyond notions of imperial control. The Regency lit bateau (boat-shaped bed) is seen to be draped with muslin hangings in an Anglo-Indian style that is copied from contemporary paintings and drawings. There is also a small empire seat that was donated to a wartime sale to raise funds for the Red Cross. Interpretations should depict the Room as a space that explores Britain's fascination with Asian aesthetics and how the colonial trade networks have founded a change in global goods into a fashionable symbol of status.</p>
-</br>
-</br>
-<br>
-<h1> The Red Bathroom</h1>
-<p class="maintext"><video class="mediaright" height="450" controls autoplay muted loop id="video">
-    <source src="Basildon Park img/20260421_120606.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-This room also links to the Red Bathroom, a bizarre-looking room that is one of the modern features of the house that stands out, whose purpose was to modernise the house that initially only had one bathroom to make it more suitable for 1950s living. This is a pattern they did for other little rooms that were much too small for anything else. Interpretations here should mention this room as evidence of changing ideas surrounding luxury, hygiene, and modernity within aristocratic life and show how technological advancements have crept into a country house and reshaped everyday routines. This room is a part of Basildon’s layered history, and demonstrates how restoration and adaptations can alter and confuse the distinctive lines between original historical material and later 20th-century reconstruction.</p>
- 
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
+    <img
+      class="mainImg"
+      src="Basildon Park img/20260421_120545.jpg"
+      alt="Chinese Coromandel lacquer folding screen"
+    />
+    <p class="mainbody">
+      <img
+        class="medialeft"
+        src="Basildon Park img/20260421_120407.jpg"
+        alt="Drawings hung in Bamboo Dressing Room of Monuments in India"
+      />Set behind the columns of the Loggia, the view from the window reveals
+      the finely carved Roman Ionic capitals atop the columns, possibly based on
+      Piranesi's engravings. This room was primarily used as a dressing room
+      that has been turned into a small guest bedroom by the Iliffes and was
+      once used in the 2019 Documentary ‘The Windsors’.
+      <br />
+      <br />
+      A feature of the room is a Chinese six-leaf Coromandel Screen that was
+      once 12 panels and depicted
+      <em>‘An Elegant Gathering in the Western Gardens’</em>, a famous event in
+      Chinese literature. According to the legend, a group of 16 famous
+      statesmen, literati and artists gathered in the Western Garden of Wang
+      Shen. One of the artists of the period wrote an account commemorating the
+      experience on one side, while the front shows illustrations of the
+      gathering. As only half of the panels are present, it is impossible to
+      know the full story and information of the piece, and, as it would only be
+      significant to someone with an understanding of Chinese literature, it
+      raises questions about its significance here beyond notions of imperial
+      control. The Regency lit bateau (boat-shaped bed) is seen to be draped
+      with muslin hangings in an Anglo-Indian style that is copied from
+      contemporary paintings and drawings. There is also a small empire seat
+      that was donated to a wartime sale to raise funds for the Red Cross.
+      Interpretations should depict the Room as a space that explores Britain's
+      fascination with Asian aesthetics and how the colonial trade networks have
+      founded a change in global goods into a fashionable symbol of status.
+    </p>
+    <br />
+    <br />
+    <br />
+    <h1>The Red Bathroom</h1>
+    <p class="maintext">
+      <video
+        class="mediaright"
+        height="450"
+        controls
+        autoplay
+        muted
+        loop
+        id="video"
+      >
+        <source
+          src="Basildon Park img/20260421_120606.mp4"
+          alt="Video of the Red Bathroom"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      This room also links to the Red Bathroom, a bizarre-looking room that is
+      one of the modern features of the house that stands out, whose purpose was
+      to modernise the house that initially only had one bathroom to make it
+      more suitable for 1950s living. This is a pattern they did for other
+      little rooms that were much too small for anything else. Interpretations
+      here should mention this room as evidence of changing ideas surrounding
+      luxury, hygiene, and modernity within aristocratic life and show how
+      technological advancements have crept into a country house and reshaped
+      everyday routines. This room is a part of Basildon’s layered history, and
+      demonstrates how restoration and adaptations can alter and confuse the
+      distinctive lines between original historical material and later
+      20th-century reconstruction.
+    </p>
 
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>  
-</body>
+        loadAccessibility();
+      });
+    </script>
+  </body>
 </html>

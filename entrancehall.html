@@ -5,186 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Entrance Hall</title>
     <style>
-        body {
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
-        .mainImg {
+      .mainImg {
         width: auto;
         border-radius: 10px;
         max-height: 900px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -194,12 +190,11 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Entrance Hall</h1>
-  
-   <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
+
+    <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
       Accessibility Mode
     </button>
     <div class="topBar" role="navigation" aria-label="Main navigation">
@@ -213,135 +208,179 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="https://www.theenglishhome.co.uk/_gatsby/file/1c8a93c06e15a911b870ca220e7a0550/13166_new-Entrance-Hall-1290662.jpg"/>
-    <p>Once you enter through the Double doors of the Loggia, you enter a vastly different space, a hall full of extravagance designed to impress. Throughout its life, the Entrance hall has set the expectations for the house for visitors and served as a link between the exterior and the interior of the house and parkland, as well as served for grand entertainments that were popular in country-house life in the 18th Century. The Hall is the first of many richly decorated rooms in the centre of the house, such as the Octagon Room. When you enter, you are greeted by the volunteers of the National Trust, who discuss the four main owners of the house with you and direct you where to go to follow the flow of the house.
-</br><img class="medialeft" width="300" src="Basildon Park img/20260421_111116.jpg"/>
-</br>
-The original 18th-century design of the Room by John Carr was seen to be in the fashionable ‘Adam’ style of the time, inspired by Roman ruins. This used a method in which the outdoor colours of the Park and the stone of the building were reflected inside to create a picturesque effect. These were typically more pastel tones that were light and airy, such as yellows and greens, or blues and greys, and would give way to much stronger colours as you would have delved deeper into the house. As per the style, the house was designed so that the interior was cohesive and unified, with furniture that complemented the plasterwork and architecture, as seen in how the furniture was arranged against the room's walls to open up the space and create a grander effect.
-</br>
-</br>
+    <img
+      class="mainImg"
+      src="https://www.theenglishhome.co.uk/_gatsby/file/1c8a93c06e15a911b870ca220e7a0550/13166_new-Entrance-Hall-1290662.jpg"
+      alt="Picture of Entrance Hall showing Fireplace"
+    />
+    <p>
+      Once you enter through the Double doors of the Loggia, you enter a vastly
+      different space, a hall full of extravagance designed to impress.
+      Throughout its life, the Entrance hall has set the expectations for the
+      house for visitors and served as a link between the exterior and the
+      interior of the house and parkland, as well as served for grand
+      entertainments that were popular in country-house life in the 18th
+      Century. The Hall is the first of many richly decorated rooms in the
+      centre of the house, such as the Octagon Room. When you enter, you are
+      greeted by the volunteers of the National Trust, who discuss the four main
+      owners of the house with you and direct you where to go to follow the flow
+      of the house. <br /><img
+        class="medialeft"
+        width="300"
+        src="Basildon Park img/20260421_111116.jpg"
+        alt="Picture of Entrance Hall Ceiling"
+      />
+      <br />
+      The original 18th-century design of the Room by John Carr was seen to be
+      in the fashionable ‘Adam’ style of the time, inspired by Roman ruins. This
+      used a method in which the outdoor colours of the Park and the stone of
+      the building were reflected inside to create a picturesque effect. These
+      were typically more pastel tones that were light and airy, such as yellows
+      and greens, or blues and greys, and would give way to much stronger
+      colours as you would have delved deeper into the house. As per the style,
+      the house was designed so that the interior was cohesive and unified, with
+      furniture that complemented the plasterwork and architecture, as seen in
+      how the furniture was arranged against the room's walls to open up the
+      space and create a grander effect.
+      <br />
+      <br />
 
-James Morrison had changed it from an entrance hall into a kind of Music Room, adding upholstery, furnishings, and two pianos to make it a different kind of entertainment space. This, in turn, caused the entrance of the house to be accessed via the ground floor through the central archway. It was his architect, Papworth, who altered the colouring of the room and furnishings to match what is seen to this day, making the plasterwork more pink and green. This was not the only time the room had been altered. During wartime military occupation, the walls were badly damaged and painted cream during the following renovations.
-</br>
-</br>
+      James Morrison had changed it from an entrance hall into a kind of Music
+      Room, adding upholstery, furnishings, and two pianos to make it a
+      different kind of entertainment space. This, in turn, caused the entrance
+      of the house to be accessed via the ground floor through the central
+      archway. It was his architect, Papworth, who altered the colouring of the
+      room and furnishings to match what is seen to this day, making the
+      plasterwork more pink and green. This was not the only time the room had
+      been altered. During wartime military occupation, the walls were badly
+      damaged and painted cream during the following renovations.
+      <br />
+      <br />
 
-It was when Lord and Lady Iliffe arrived that the true extent of the damage could be seen; many of the original fittings, such as the doors and nearly all the chimneypieces, were damaged, and many of the original furnishings added by previous owners were sold off, leaving it bare of the Georgian furniture it was created for. The Iliffes revived the existing colours on the ceiling and used them to repaint the walls after clearing the room of dry rot, as well as Lady Iliffe’s meticulous care to refurnish the room by using Georgian furniture she could find from many country house sales to revive the previous essence of the room. 
-</br>
-</br>
+      It was when Lord and Lady Iliffe arrived that the true extent of the
+      damage could be seen; many of the original fittings, such as the doors and
+      nearly all the chimneypieces, were damaged, and many of the original
+      furnishings added by previous owners were sold off, leaving it bare of the
+      Georgian furniture it was created for. The Iliffes revived the existing
+      colours on the ceiling and used them to repaint the walls after clearing
+      the room of dry rot, as well as Lady Iliffe’s meticulous care to refurnish
+      the room by using Georgian furniture she could find from many country
+      house sales to revive the previous essence of the room.
+      <br />
+      <br />
 
-The original plasterwork, which featured elements of diamond-patterned bands, plasterwork and griffins a classic neo-classical ornament that also echoes Sykes' time in India (griffins were thought to guard all the gold of India), had a portion removed for casting to later sell. Hence, the Iliffes had the pattern copied to replace the missing section. In addition, they kept the colouring of Papworth and blended it down the walls to cover the cream and create a harmonious effect in the room. The doors were kept intact as before the military occupation; they were removed by Lord Illiffe’s father to his London house at Carlton Terrace and returned later in 1954. Regarding the chimneypiece that was originally removed in 1930 by Messrs Robersons, the Iliffes salvaged the present carved wood, which had a similar interior designed by Carr, from another house that suffered military occupation and was later demolished, to reconstruct the fireplace.  Some of the furniture Lady Iliffe managed to procure from house sales in the 1950s included a pair of painted side tables with marble tops that were restored to reveal the original surface, now placed on either side of the room, reflecting the symmetrical patterns found throughout the house.
-</br>
-</br>
+      The original plasterwork, which featured elements of diamond-patterned
+      bands, plasterwork and griffins a classic neo-classical ornament that also
+      echoes Sykes' time in India (griffins were thought to guard all the gold
+      of India), had a portion removed for casting to later sell. Hence, the
+      Iliffes had the pattern copied to replace the missing section. In
+      addition, they kept the colouring of Papworth and blended it down the
+      walls to cover the cream and create a harmonious effect in the room. The
+      doors were kept intact as before the military occupation; they were
+      removed by Lord Illiffe’s father to his London house at Carlton Terrace
+      and returned later in 1954. Regarding the chimneypiece that was originally
+      removed in 1930 by Messrs Robersons, the Iliffes salvaged the present
+      carved wood, which had a similar interior designed by Carr, from another
+      house that suffered military occupation and was later demolished, to
+      reconstruct the fireplace. Some of the furniture Lady Iliffe managed to
+      procure from house sales in the 1950s included a pair of painted side
+      tables with marble tops that were restored to reveal the original surface,
+      now placed on either side of the room, reflecting the symmetrical patterns
+      found throughout the house.
+      <br />
+      <br />
 
-The Iliffes contributed significantly to how the house is now presented by the National Trust, offering ‘A 20th -century imaging of the past’ by rescuing furnishings from other houses that were not restored to reflect the original arrangement of the hall in the 18th century. Interpretations of this room should focus on the layered space shaped by loss, intervention, and the curators' choices, such as the Iliffes, and should reflect the differences and challenges that went into reconstructing it to echo the Georgian style. This would allow visitors to reflect on which aspects of the house are genuinely from the 18th century, and which are from modern reconstruction.
-</p>
-</br></br>
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
+      The Iliffes contributed significantly to how the house is now presented by
+      the National Trust, offering ‘A 20th -century imaging of the past’ by
+      rescuing furnishings from other houses that were not restored to reflect
+      the original arrangement of the hall in the 18th century. Interpretations
+      of this room should focus on the layered space shaped by loss,
+      intervention, and the curators' choices, such as the Iliffes, and should
+      reflect the differences and challenges that went into reconstructing it to
+      echo the Georgian style. This would allow visitors to reflect on which
+      aspects of the house are genuinely from the 18th century, and which are
+      from modern reconstruction.
+    </p>
+    <br /><br />
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
-
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>  
-</body>
+        loadAccessibility();
+      });
+    </script>
+  </body>
 </html>

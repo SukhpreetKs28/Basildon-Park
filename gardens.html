@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Park Land & Gardens</title>
-<style>
-   body {
+    <style>
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
@@ -14,172 +14,168 @@
         border-radius: 10px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
 
-.medialeft{
-  float: left;
-    width: 700px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      .medialeft {
+        float: left;
+        width: 700px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 700px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 700px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -189,9 +185,8 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Park Land & Gardens</h1>
     <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
       Accessibility Mode
@@ -207,126 +202,174 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/oxfordshire-buckinghamshire-berkshire/places/basildon-park/library/winter/1298188-resized.jpg?auto=webp&width=1440&crop=16:7&dpr=1"/>
-        <p><img class="medialeft" width="auto"  src="https://imgs.search.brave.com/l942LQRD0vqIa3-Amn3W_GFTmyGYGC30QN7ZXSR8kAo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGljdHVyZXNvZmVu/Z2xhbmQuY29tL2lt/Zy9YLzExODg4Njcu/anBn"/>
-Set in 400 acres of parkland, Basildon Park offers a range of activities to keep you on your toes, such as taking one of four parkland walks, easily marked to follow, that let you experience something new and different each time. Through the walks, you can discover the Nissen huts built during WW2 to house prisoners of war, see the changing colours the landscape offers, and explore the historic trees and picnic spots the park has to offer. The gardens are another aspect of Basildon that is a must-see and explore the layered history of the gardens as they went through their own state of ruin and restoration. Explore the pleasure ground designed by David Brandon in the 1800s and see Lady Iliffe’s rose gardens bloom during Spring and Summer, as well as look over the Italianate terrace that encloses the lawn and offers views over the Thames valley hills.
-</br>
-</br>
-When Sir Francis Sykes was the owner, the park came up to the east side of the house in the approved ‘natural landscape’ manner. It was in the 19th century that Papworth and Brandon provided designs for the gardens and parks marking the shift to a more ‘manufactured’ natural landscape. When the Iliffes moved to Basildon, the garden and park were left in a derelict state, much like the house. Wartime acquisition sealed the fate of the garden as tank drivers trained for battle in the park, with prisoners of war being held in Nissen huts on the parkland, and the trees being used as practice to hide behind to escape bullets.  The Iliffes immediately set to work repairing the landscape from the aftermath of neglect and ruin that led to over-growth, tank tracks, broken trees, broken architecture, as well as the mess the army left behind in the form of barbed wire, oil drums and the Nissen huts that can still be seen on the parkland walks. Between 1952 and 1955, the area around the house was cleared and lawns were re-seeded, and by 1964, the courtyards were paved with brick. In 1967, the pleasure grounds were cleared and replanted to restore the few surviving remnants of the original shrubbery. In the 1960s, landscape architect Lanning Roper was commissioned to create a small garden in front of the South Pavilion for Lady Iliffe, which later became their personal garden when they formally moved into the South Pavilion and was known as her Rose Garden. The terrace outside the East Front is a lawn originally planted as a parterre to provide a view of the Thames Valley. The terrace is a vital feature of the Park as it acts as a uniting force between the house, garden and park, linking all three spatially, metaphorically.
-</br></br><img class="mediaright" width="200" height="700" src="https://historicengland.org.uk/etl/1210340/324c1203-728b-4a74-b477-5f56788f9d19.jpeg?autorotate=true&height=500&rmode=max&quality=80&upscale=false&format=webp"/>
+    <img
+      class="mainImg"
+      src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/regions/oxfordshire-buckinghamshire-berkshire/places/basildon-park/library/winter/1298188-resized.jpg?auto=webp&width=1440&crop=16:7&dpr=1"
+      alt="View of parklands & hills"
+    />
+    <p>
+      <img
+        class="medialeft"
+        width="auto"
+        src="https://imgs.search.brave.com/l942LQRD0vqIa3-Amn3W_GFTmyGYGC30QN7ZXSR8kAo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly93d3cu/cGljdHVyZXNvZmVu/Z2xhbmQuY29tL2lt/Zy9YLzExODg4Njcu/anBn"
+        alt="View of Garden at back of House"
+      />
+      Set in 400 acres of parkland, Basildon Park offers a range of activities
+      to keep you on your toes, such as taking one of four parkland walks,
+      easily marked to follow, that let you experience something new and
+      different each time. Through the walks, you can discover the Nissen huts
+      built during WW2 to house prisoners of war, see the changing colours the
+      landscape offers, and explore the historic trees and picnic spots the park
+      has to offer. The gardens are another aspect of Basildon that is a
+      must-see and explore the layered history of the gardens as they went
+      through their own state of ruin and restoration. Explore the pleasure
+      ground designed by David Brandon in the 1800s and see Lady Iliffe’s rose
+      gardens bloom during Spring and Summer, as well as look over the
+      Italianate terrace that encloses the lawn and offers views over the Thames
+      valley hills.
+      <br />
+      <br />
+      When Sir Francis Sykes was the owner, the park came up to the east side of
+      the house in the approved ‘natural landscape’ manner. It was in the 19th
+      century that Papworth and Brandon provided designs for the gardens and
+      parks marking the shift to a more ‘manufactured’ natural landscape. When
+      the Iliffes moved to Basildon, the garden and park were left in a derelict
+      state, much like the house. Wartime acquisition sealed the fate of the
+      garden as tank drivers trained for battle in the park, with prisoners of
+      war being held in Nissen huts on the parkland, and the trees being used as
+      practice to hide behind to escape bullets. The Iliffes immediately set to
+      work repairing the landscape from the aftermath of neglect and ruin that
+      led to over-growth, tank tracks, broken trees, broken architecture, as
+      well as the mess the army left behind in the form of barbed wire, oil
+      drums and the Nissen huts that can still be seen on the parkland walks.
+      Between 1952 and 1955, the area around the house was cleared and lawns
+      were re-seeded, and by 1964, the courtyards were paved with brick. In
+      1967, the pleasure grounds were cleared and replanted to restore the few
+      surviving remnants of the original shrubbery. In the 1960s, landscape
+      architect Lanning Roper was commissioned to create a small garden in front
+      of the South Pavilion for Lady Iliffe, which later became their personal
+      garden when they formally moved into the South Pavilion and was known as
+      her Rose Garden. The terrace outside the East Front is a lawn originally
+      planted as a parterre to provide a view of the Thames Valley. The terrace
+      is a vital feature of the Park as it acts as a uniting force between the
+      house, garden and park, linking all three spatially, metaphorically.
+      <br /><br /><img
+        class="mediaright"
+        width="500"
+        src="https://www.fabulousfollies.net/uploads/3/6/0/7/360764/published/br-basildon-oxford-lodges-pc1.jpg?1565169660"
+        alt="Oxford Lodges at Gates of basildon House in 1939"
+      />
 
-The Oxford Lodges is the first thing you see when you enter the Basildon estate and leaves an impression of a grand place with considerable wealth backing it, showing off the owners at the time, Sykes and later Morrison, who hoped to achieve with it. While Carr designed it, Morrison built upon his design to add more height, making the gestures more imposing in the eyes of outsiders, as well as adding ornaments to showcase his wealth and status. After passing these gates, you reach the Old 19th-century Frame yard, now used as a car park, but used to contain glasshouses devoted to growing fruits and flowers. The old kitchen garden on the opposing side of the red-brick wall and the orangery built by Papworth are both privately owned. The Stables yard is the last part you see before you can reach the house. While Sykes's stable was in front of the house, it was demolished by Morrison as it blocked the view of the park from the Loggia and was moved and used by the National Trust staff.
-</br>
-</br>
-The park is first recorded visually by John Roque through a map in 1762 showing the Fanes’ manor house surrounded by a small formal garden within a deer park. Sykes, Morrison and the Iliffes have been carrying around new planting schemes to add and remove paths and garden ornaments, forming, abandoning and then restoring walled gardens. The park was in a state of neglect when Morrison purchased it. In 1894, Papworth advised Morrison that the house should not sit isolated in an expanse of lawn but blend with its surroundings.  Basildon Park has become more naturalistic in its planting in recent years, encouraging the spread of wild orchids in the summer. The parkland and gardens function not only as decorative surroundings of the house, but also as an historical landscape that portrays the changing attitudes towards taste, class, leisure and conservation across different centuries. 
-</p>
-   
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
+      The Oxford Lodges is the first thing you see when you enter the Basildon
+      estate and leaves an impression of a grand place with considerable wealth
+      backing it, showing off the owners at the time, Sykes and later Morrison,
+      who hoped to achieve with it. While Carr designed it, Morrison built upon
+      his design to add more height, making the gestures more imposing in the
+      eyes of outsiders, as well as adding ornaments to showcase his wealth and
+      status. After passing these gates, you reach the Old 19th-century Frame
+      yard, now used as a car park, but used to contain glasshouses devoted to
+      growing fruits and flowers. The old kitchen garden on the opposing side of
+      the red-brick wall and the orangery built by Papworth are both privately
+      owned. The Stables yard is the last part you see before you can reach the
+      house. While Sykes's stable was in front of the house, it was demolished
+      by Morrison as it blocked the view of the park from the Loggia and was
+      moved and used by the National Trust staff.
+      <br />
+      <br />
+      The park is first recorded visually by John Roque through a map in 1762
+      showing the Fanes’ manor house surrounded by a small formal garden within
+      a deer park. Sykes, Morrison and the Iliffes have been carrying around new
+      planting schemes to add and remove paths and garden ornaments, forming,
+      abandoning and then restoring walled gardens. The park was in a state of
+      neglect when Morrison purchased it. In 1894, Papworth advised Morrison
+      that the house should not sit isolated in an expanse of lawn but blend
+      with its surroundings. Basildon Park has become more naturalistic in its
+      planting in recent years, encouraging the spread of wild orchids in the
+      summer. The parkland and gardens function not only as decorative
+      surroundings of the house, but also as an historical landscape that
+      portrays the changing attitudes towards taste, class, leisure and
+      conservation across different centuries.
+    </p>
 
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>
-</body>
+        loadAccessibility();
+      });
+    </script>
+  </body>
 </html>

@@ -5,186 +5,182 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Green Drawing Room</title>
     <style>
-       body {
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
-   .mainImg {
+      .mainImg {
         width: auto;
         border-radius: 10px;
         max-height: 900px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -194,11 +190,10 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Green Drawing Room</h1>
- <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
+    <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
       Accessibility Mode
     </button>
     <div class="topBar" role="navigation" aria-label="Main navigation">
@@ -211,126 +206,148 @@ button:focus {
       <a href="prominence.html">Prominence</a>
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
-    </div><img class = "mainImg" src="Basildon Park img/20260421_115303.jpg"/>
-    <p><img class="medialeft" width="200" height="600" src="Basildon Park img/20260421_115306.jpg"/><img class="mediaright" width="200" height="600" src="Basildon Park img/20260421_115322.jpg"/>The Green Drawing Room is a space that was formed as a part of the more ‘feminine’ or family side of the house and was inaccessible until the restoration works in the Octagon Room. Used by both Sykes and Morrisons as a breakfast and parlour room and as a dining room for the Iliffes from 1952 to 1977 till it was eventually turned back into a drawing room by the National Trust. Other family suites would comprise of; the Sutherland Room (Sitting Room), 1950’s Kitchen (Bedroom) and Volunteer’s Room (dressing room).
-</br>
-</br>
-This room is one of the only rooms of the house that retains its original Georgian ceiling designed by Carr, with its colour scheme of pink and green being recognisable despite no gilding. The ceiling reflects the style of Richardson from his book, <em>‘Books of ceilings’</em>, with the rectangular bands of ornaments on either end depicting the heads of Roman emperors. The main difference in the design of this room is the placement of the door, which reflects Neoclassical ideals and makes the room more symmetrical.
-</br>
-</br>
+    </div>
+    <img
+      class="mainImg"
+      src="Basildon Park img/20260421_115303.jpg"
+      alt="Picture of green Drawing Room"
+    />
+    <p>
+      <img
+        class="medialeft"
+        width="200"
+        height="600"
+        src="Basildon Park img/20260421_115306.jpg"
+        alt="Original Georgian ceiling of Green Drawing Room"
+      /><img
+        class="mediaright"
+        width="200"
+        height="600"
+        src="Basildon Park img/20260421_115322.jpg"
+        alt="Green Drawing Room interior"
+      />The Green Drawing Room is a space that was formed as a part of the more
+      ‘feminine’ or family side of the house and was inaccessible until the
+      restoration works in the Octagon Room. Used by both Sykes and Morrisons as
+      a breakfast and parlour room and as a dining room for the Iliffes from
+      1952 to 1977 till it was eventually turned back into a drawing room by the
+      National Trust. Other family suites would comprise of; the Sutherland Room
+      (Sitting Room), 1950’s Kitchen (Bedroom) and Volunteer’s Room (dressing
+      room).
+      <br />
+      <br />
+      This room is one of the only rooms of the house that retains its original
+      Georgian ceiling designed by Carr, with its colour scheme of pink and
+      green being recognisable despite no gilding. The ceiling reflects the
+      style of Richardson from his book, <em>‘Books of ceilings’</em>, with the
+      rectangular bands of ornaments on either end depicting the heads of Roman
+      emperors. The main difference in the design of this room is the placement
+      of the door, which reflects Neoclassical ideals and makes the room more
+      symmetrical.
+      <br />
+      <br />
 
-This room also features the house's original chimneypiece sculpted by Richard Westmacott in 1782-83. The National Trust in the 1980s emphasised this by adding green silk damask originally made for Edwardian curtains that used to be in Englefield House as wallpaper, producing a ‘soft intimate background’. The curtains were taken apart, stretched, and attached to battens to form panels, which were then padded and nailed to the walls, and trimmed with the original curtain braid.  This now creates a unique look as the green of the curtains has begun to fade near the top, adding streaks, but you are still able to make out the vibrant colour it used to be from areas that haven’t touched sunlight as much. The Iliffes chose the paintings as landscapes to relate to the interior and the view of the park and gardens seen from the windows.
-</br>
-</br>
+      This room also features the house's original chimneypiece sculpted by
+      Richard Westmacott in 1782-83. The National Trust in the 1980s emphasised
+      this by adding green silk damask originally made for Edwardian curtains
+      that used to be in Englefield House as wallpaper, producing a ‘soft
+      intimate background’. The curtains were taken apart, stretched, and
+      attached to battens to form panels, which were then padded and nailed to
+      the walls, and trimmed with the original curtain braid. This now creates a
+      unique look as the green of the curtains has begun to fade near the top,
+      adding streaks, but you are still able to make out the vibrant colour it
+      used to be from areas that haven’t touched sunlight as much. The Iliffes
+      chose the paintings as landscapes to relate to the interior and the view
+      of the park and gardens seen from the windows.
+      <br />
+      <br />
 
-Interpretations for this room should reflect on the staged setting put in place by the National Trust and its owners as something that portrays its sociability, femininity and leisure within a country house. While these rooms reflect comfort, it's important to think about the labour that goes into making them look as they do and retaining them, and to think about which aspects reflect the room as a modern heritage reconstruction and which you would deem authentic.
-</p>
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
+      Interpretations for this room should reflect on the staged setting put in
+      place by the National Trust and its owners as something that portrays its
+      sociability, femininity and leisure within a country house. While these
+      rooms reflect comfort, it's important to think about the labour that goes
+      into making them look as they do and retaining them, and to think about
+      which aspects reflect the room as a modern heritage reconstruction and
+      which you would deem authentic.
+    </p>
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
-
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script> 
+        loadAccessibility();
+      });
+    </script>
   </body>
 </html>

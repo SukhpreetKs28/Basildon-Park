@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Dining Room</title>
     <style>
-    body {
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
@@ -14,176 +14,172 @@
         border-radius: 10px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -193,11 +189,10 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Dining Room</h1>
- <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
+    <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
       Accessibility Mode
     </button>
     <div class="topBar" role="navigation" aria-label="Main navigation">
@@ -211,135 +206,200 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="Basildon Park img/20260421_114027.jpg"/>
-    <p><img class="mediaright" height="400" src="https://www.nationaltrustimages.org.uk/AssetLink/650ats4vng6850ih257x882mvp7k162b.jpg"/>The Dining Room is one of the House's most impressive feats of lavishness and the status of the Upper Class. As someone who had recently amassed great wealth from his ventures in the East India Company, having this room would show off his new elevated status and social prowess. John Carr designed this room according to the established rules of the 18th century, when formal dining was a new practice but was rapidly being adopted by the upper class. When you walk into the room, you are met with two symmetrical Scagliola columns that frame the long dining table, decorated with silverware and plates, representing the formal dining setup. Before this, no room was dedicated to ‘dinner’; it was mainly used for great occasions and entertainment, whereas family meals were taken in the Green Drawing Room instead. 
-</br>
-</br>
+    <img
+      class="mainImg"
+      src="Basildon Park img/20260421_114027.jpg"
+      alt="Ceiling of Dining Room showing Painting Roundels"
+    />
+    <p>
+      <img
+        class="mediaright"
+        height="400"
+        src="https://www.nationaltrustimages.org.uk/AssetLink/650ats4vng6850ih257x882mvp7k162b.jpg"
+        alt="Decorative Design shown in thye Book Of Ceilings,1776"
+      />The Dining Room is one of the House's most impressive feats of
+      lavishness and the status of the Upper Class. As someone who had recently
+      amassed great wealth from his ventures in the East India Company, having
+      this room would show off his new elevated status and social prowess. John
+      Carr designed this room according to the established rules of the 18th
+      century, when formal dining was a new practice but was rapidly being
+      adopted by the upper class. When you walk into the room, you are met with
+      two symmetrical Scagliola columns that frame the long dining table,
+      decorated with silverware and plates, representing the formal dining
+      setup. Before this, no room was dedicated to ‘dinner’; it was mainly used
+      for great occasions and entertainment, whereas family meals were taken in
+      the Green Drawing Room instead.
+      <br />
+      <br />
 
-The plasterwork, mouldings, columns, and frieze are Carr’s original work, with plasterwork replacing textiles, as they would retain the smell of food. The frieze features alternating Bacchus heads and urns, a popular appearance in 18th-century dining rooms, as he is the God of Wine. The Ceiling has been the room's most notable feature throughout its history, though it's also undergone the most changes. Carr’s ceiling depicted a complex geometrical pattern inspired by the work of the Adams brothers and George Richardson's ‘Book of Ceilings’; the central wreath on the chimneypiece, adorned with putti emerging from acanthus fronds, is a design found in Richardson’s book. The artist Theodore de Bruyn was commissioned to paint the lunettes (semi-circular or crescent-shaped decorative panels) and medallions with classical allegories, which were meant to be painted grey. Everything about this room was designed in the Neo-classical style of symmetry, even through the use of fake doors that don’t open or lead anywhere.
-</br><img class="medialeft" width="300" src="https://www.nationaltrustimages.org.uk/AssetLink/6c8t5i8hx05rtvhge2aty7oy3jq623ty.jpg"/>
-</br>
+      The plasterwork, mouldings, columns, and frieze are Carr’s original work,
+      with plasterwork replacing textiles, as they would retain the smell of
+      food. The frieze features alternating Bacchus heads and urns, a popular
+      appearance in 18th-century dining rooms, as he is the God of Wine. The
+      Ceiling has been the room's most notable feature throughout its history,
+      though it's also undergone the most changes. Carr’s ceiling depicted a
+      complex geometrical pattern inspired by the work of the Adams brothers and
+      George Richardson's ‘Book of Ceilings’; the central wreath on the
+      chimneypiece, adorned with putti emerging from acanthus fronds, is a
+      design found in Richardson’s book. The artist Theodore de Bruyn was
+      commissioned to paint the lunettes (semi-circular or crescent-shaped
+      decorative panels) and medallions with classical allegories, which were
+      meant to be painted grey. Everything about this room was designed in the
+      Neo-classical style of symmetry, even through the use of fake doors that
+      don’t open or lead anywhere.
+      <br /><img
+        class="medialeft"
+        width="300"
+        src="https://www.nationaltrustimages.org.uk/AssetLink/6c8t5i8hx05rtvhge2aty7oy3jq623ty.jpg"
+        alt="Old picture of Ceiling in Dining Room from 1800s"
+      />
+      <br />
 
-In 1845, Morrison adapted the dining room to a more Victorian style, adding gilt elements, and replaced these paintings with darker polychrome panels depicting scenes from Dante’s <em>Divine Comedy</em>. It was between both World Wars that significant change came. In 1929, George Ferdinando brought the house with the intention to sell it in America but failed; he removed and sold the chimneypiece, doors, door-cases, mirrors, some of the plasterwork, and paintings from Morrisons' collection, including the painted roundels, this was with the intention of showing off quality and style of the decorations at the house possibly to further his own status of importance. These were found to be sold to the Waldorf Astoria Hotel in New York, where they were used to create the ‘Basildon Room’.
-</br><img class="mediaright" width="auto" src="Basildon Park img/20260421_111834.jpg"/>
-</br>
+      In 1845, Morrison adapted the dining room to a more Victorian style,
+      adding gilt elements, and replaced these paintings with darker polychrome
+      panels depicting scenes from Dante’s <em>Divine Comedy</em>. It was
+      between both World Wars that significant change came. In 1929, George
+      Ferdinando brought the house with the intention to sell it in America but
+      failed; he removed and sold the chimneypiece, doors, door-cases, mirrors,
+      some of the plasterwork, and paintings from Morrisons' collection,
+      including the painted roundels, this was with the intention of showing off
+      quality and style of the decorations at the house possibly to further his
+      own status of importance. These were found to be sold to the Waldorf
+      Astoria Hotel in New York, where they were used to create the ‘Basildon
+      Room’. <br /><img
+        class="mediaright"
+        width="auto"
+        src="Basildon Park img/20260421_111834.jpg"
+        alt="Dining Table displayed at House by National trust"
+      />
+      <br />
 
-When the Army drew an inventory of Basildon in 1940, they noted that the walls were ‘newly distempered … marking of previous decorative panels which had been removed, showing through distemper.’ By the 1950s, nearly every run of moulding in the Dining Room had missing parts, and it was in 1952 that the Iliffes decided to convert the room into a drawing room and painted it turquoise blue. Graham Rust painted a set of grisailles (a painting technique using shades of grey) for the wall panels that matched a set the original painter had made in a dining room at Farnley Hall, Yorkshire. They brought the chimneypiece from Panton Hall as well as a Neo-classical grate and fender from Brockenhurst Park, and recovered 17 of Carr’s original doors in the boiler room that Ferdinando failed to sell. Even the curtains shown are dated as 19th-century silk damask curtains that were purchased in a sale at Ashburnham Palace, ‘giving a settled look that could not have been achieved with new ones.’
-</br>
-</br>
+      When the Army drew an inventory of Basildon in 1940, they noted that the
+      walls were ‘newly distempered … marking of previous decorative panels
+      which had been removed, showing through distemper.’ By the 1950s, nearly
+      every run of moulding in the Dining Room had missing parts, and it was in
+      1952 that the Iliffes decided to convert the room into a drawing room and
+      painted it turquoise blue. Graham Rust painted a set of grisailles (a
+      painting technique using shades of grey) for the wall panels that matched
+      a set the original painter had made in a dining room at Farnley Hall,
+      Yorkshire. They brought the chimneypiece from Panton Hall as well as a
+      Neo-classical grate and fender from Brockenhurst Park, and recovered 17 of
+      Carr’s original doors in the boiler room that Ferdinando failed to sell.
+      Even the curtains shown are dated as 19th-century silk damask curtains
+      that were purchased in a sale at Ashburnham Palace, ‘giving a settled look
+      that could not have been achieved with new ones.’
+      <br />
+      <br />
 
-When the house was given to the National Trust, the room was changed back to its original use as a dining room. To do this, they enlisted the help of the nephew of Lady Iliffe, Alec Cobbe, in 1992 to redecorate the room, including the ceiling and wall medallions and roundels, into an imitation of the originals. As the content of the 18th-century roundels was not precisely known, he based his paintings on the roundels that Carr designed at Harewood House's Music Room. These three features of the nine muses showcase Lord Iliffe’s profound literary tastes: Erato (lyric poetry), Melpomene (tragedy) and Thalia (comedy). Papworth carried out the gilding for this restoration in the 19th Century and has since only been retouched and cleaned. Surrounding the room are Chinese export armorial porcelain pieces, part of a set ordered by Sykes before he left India, bearing the motto ‘Wise who is industrious’. These were acquired in 1977 through donations from Lord Iliffe, the National Art Collections Fund, and the National Trust. The reason these are not used for the dining room table is their fragility, so the National Trust uses Iliffe’s plates instead. The cutlery also has a background history, as they were sold by Ferdinando but was later found by the trust in the Netherlands.
-</br>
-</br>
+      When the house was given to the National Trust, the room was changed back
+      to its original use as a dining room. To do this, they enlisted the help
+      of the nephew of Lady Iliffe, Alec Cobbe, in 1992 to redecorate the room,
+      including the ceiling and wall medallions and roundels, into an imitation
+      of the originals. As the content of the 18th-century roundels was not
+      precisely known, he based his paintings on the roundels that Carr designed
+      at Harewood House's Music Room. These three features of the nine muses
+      showcase Lord Iliffe’s profound literary tastes: Erato (lyric poetry),
+      Melpomene (tragedy) and Thalia (comedy). Papworth carried out the gilding
+      for this restoration in the 19th Century and has since only been retouched
+      and cleaned. Surrounding the room are Chinese export armorial porcelain
+      pieces, part of a set ordered by Sykes before he left India, bearing the
+      motto ‘Wise who is industrious’. These were acquired in 1977 through
+      donations from Lord Iliffe, the National Art Collections Fund, and the
+      National Trust. The reason these are not used for the dining room table is
+      their fragility, so the National Trust uses Iliffe’s plates instead. The
+      cutlery also has a background history, as they were sold by Ferdinando but
+      was later found by the trust in the Netherlands.
+      <br />
+      <br />
 
-Interpretations of this room should focus on discussions of the colonial trade system that supplied the luxury goods that were used for these rooms, such as Sykes porcelain plates, and how these shaped elite dining culture. They should also mention the invisible labour of the servants who had to transport meals throughout the house and their duties in this room. As well as paying attention to the reconstructed character of the room, and encouraging visitors to question how these heritage spaces choose to recreate aspects of aristocratic life.
-</p>
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
+      Interpretations of this room should focus on discussions of the colonial
+      trade system that supplied the luxury goods that were used for these
+      rooms, such as Sykes porcelain plates, and how these shaped elite dining
+      culture. They should also mention the invisible labour of the servants who
+      had to transport meals throughout the house and their duties in this room.
+      As well as paying attention to the reconstructed character of the room,
+      and encouraging visitors to question how these heritage spaces choose to
+      recreate aspects of aristocratic life.
+    </p>
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
-
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>  
-</body>
+        loadAccessibility();
+      });
+    </script>
+  </body>
 </html>

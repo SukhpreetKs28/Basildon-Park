@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Sutherland Room</title>
     <style>
-     body {
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
@@ -14,176 +14,172 @@
         border-radius: 10px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -193,11 +189,10 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Sutherland Room</h1>
-     <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
+    <button id="accessibilityToggle" aria-label="Toggle accessibility mode">
       Accessibility Mode
     </button>
     <div class="topBar" role="navigation" aria-label="Main navigation">
@@ -211,133 +206,170 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="https://images.ntpl.org.uk/hppa-zooms/00000000122/cms_bas01475.bro"/>
-    <p><img class="mediaright" height="700" src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Christ_in_Glory_tapestry_by_Graham_Sutherland_in_Coventry_Cathedral.jpg/960px-Christ_in_Glory_tapestry_by_Graham_Sutherland_in_Coventry_Cathedral.jpg"/>
-To the right of the Entrance Hall, there is a rather strange room covered in various drawings and works of art. Sutherland Hall is far apart from the rest of the rooms in the House, as it is used to display the artwork studies of British artist Graham Sutherland for his painting <strong><em>Christ in Glory</em></strong>. The room reflects the friendship that formed between Lord Iliffe and Sutherland, as well as the family's connection with Coventry. The rooms also have one of the house's few original marble fireplaces, which is used as a focal point in the room's symmetry, with a sketch of a head on top of two doors on either side, with hands over them and two ceramic figures on either side of the foot of the fireplace.
-</br>
-</br><video class="medialeft" height="500" controls autoplay muted loop id="video">
-    <source src="Basildon Park img/20260421_111136 - Copy.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+    <img
+      class="mainImg"
+      src="https://images.ntpl.org.uk/hppa-zooms/00000000122/cms_bas01475.bro"
+      alt="Old picture from 1800s of what Sutherland room used to look like"
+    />
+    <p>
+      <img
+        class="mediaright"
+        height="700"
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Christ_in_Glory_tapestry_by_Graham_Sutherland_in_Coventry_Cathedral.jpg/960px-Christ_in_Glory_tapestry_by_Graham_Sutherland_in_Coventry_Cathedral.jpg"
+        alt="Tapestry in Coventry Cathedral created by Sutherland"
+      />
+      To the right of the Entrance Hall, there is a rather strange room covered
+      in various drawings and works of art. Sutherland Hall is far apart from
+      the rest of the rooms in the House, as it is used to display the artwork
+      studies of British artist Graham Sutherland for his painting
+      <strong><em>Christ in Glory</em></strong
+      >. The room reflects the friendship that formed between Lord Iliffe and
+      Sutherland, as well as the family's connection with Coventry. The rooms
+      also have one of the house's few original marble fireplaces, which is used
+      as a focal point in the room's symmetry, with a sketch of a head on top of
+      two doors on either side, with hands over them and two ceramic figures on
+      either side of the foot of the fireplace.
+      <br />
+      <br /><video
+        class="medialeft"
+        height="500"
+        controls
+        autoplay
+        muted
+        loop
+        id="video"
+      >
+        <source
+          src="Basildon Park img/20260421_111136 - Copy.mp4"
+          alt="Video of Sutherland Room"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
 
-On the night of 14 November 1940, the centre of Coventry was bombed and burned over all night, which led to the total ruin of a 14th-century cathedral. It was at this site that an improvised altar was erected and a service was held, bearing the message ‘Coventry will live again’. Sutherland was tasked with designing a tapestry that would be 78 ft high and 39 ft wide for the modern cathedral being built next to the ruins of the old cathedral. The studies in the Sutherland Room span three years, during which he worked on the final design. Previously hung in Lady Illiffe’s bedroom, the National Trust moved them here so that the room could act as a space to show some of these studies to the public. All 165 studies were sold to Lord Iliffe, who in turn presented them to the Herbert Art Gallery in Coventry, ‘they should all be kept together, and a nucleus should always be on display, showing how the design evolved’. Small selections are on loan to the cathedral, where the tapestry is displayed, and to the National Trust for Basildon House, where they are currently being displayed in this room.
-</br></br>
+      On the night of 14 November 1940, the centre of Coventry was bombed and
+      burned over all night, which led to the total ruin of a 14th-century
+      cathedral. It was at this site that an improvised altar was erected and a
+      service was held, bearing the message ‘Coventry will live again’.
+      Sutherland was tasked with designing a tapestry that would be 78 ft high
+      and 39 ft wide for the modern cathedral being built next to the ruins of
+      the old cathedral. The studies in the Sutherland Room span three years,
+      during which he worked on the final design. Previously hung in Lady
+      Illiffe’s bedroom, the National Trust moved them here so that the room
+      could act as a space to show some of these studies to the public. All 165
+      studies were sold to Lord Iliffe, who in turn presented them to the
+      Herbert Art Gallery in Coventry, ‘they should all be kept together, and a
+      nucleus should always be on display, showing how the design evolved’.
+      Small selections are on loan to the cathedral, where the tapestry is
+      displayed, and to the National Trust for Basildon House, where they are
+      currently being displayed in this room.
+      <br /><br />
 
-When the Iliffes first acquired the house, this was the first room they used, moving in with only two deckchairs, and later became Lady Iliffe’s sitting room, returning to the more traditional French layout of being the ‘feminine’ side of the house. Throughout its history, the room has served many purposes, traditionally as the Lady of the House's sitting room for meeting with her guests. The door inside leads to what would then be a private bedroom and dressing room but has been reconstructed and preserved as a 1950s kitchen. It was early in the National Trust’s ownership of the house that this room was used as an Estate Office before being used to display Sutherland’s work. While the work of Sutherland is very important to the use of the room, now interpretations should also focus more on telling the history of the room and not letting it be purely overshadowed by the artwork that the visitor is left to wander what the room is and would have been clueless if they did not see the small booklet in the room. Even in the booklet, not much information is given about the room, thereby hiding the more ‘feminine’ part of the house from the visitors' experience.
-</p>
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
-const video = document.getElementById("video");
+      When the Iliffes first acquired the house, this was the first room they
+      used, moving in with only two deckchairs, and later became Lady Iliffe’s
+      sitting room, returning to the more traditional French layout of being the
+      ‘feminine’ side of the house. Throughout its history, the room has served
+      many purposes, traditionally as the Lady of the House's sitting room for
+      meeting with her guests. The door inside leads to what would then be a
+      private bedroom and dressing room but has been reconstructed and preserved
+      as a 1950s kitchen. It was early in the National Trust’s ownership of the
+      house that this room was used as an Estate Office before being used to
+      display Sutherland’s work. While the work of Sutherland is very important
+      to the use of the room, now interpretations should also focus more on
+      telling the history of the room and not letting it be purely overshadowed
+      by the artwork that the visitor is left to wander what the room is and
+      would have been clueless if they did not see the small booklet in the
+      room. Even in the booklet, not much information is given about the room,
+      thereby hiding the more ‘feminine’ part of the house from the visitors'
+      experience.
+    </p>
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const video = document.getElementById("video");
 
-video.muted = true;
+      video.muted = true;
 
-video.addEventListener("volumechange", () => {
-    video.muted = true;
-    video.volume = 0;
-});
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+      video.addEventListener("volumechange", () => {
+        video.muted = true;
+        video.volume = 0;
+      });
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>
+        loadAccessibility();
+      });
+    </script>
   </body>
 </html>

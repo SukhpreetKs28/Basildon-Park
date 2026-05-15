@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bamboo Bedroom</title>
     <style>
-        body {
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
@@ -14,177 +14,172 @@
         border-radius: 10px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
-
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -194,7 +189,6 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Bamboo Bedroom</h1>
@@ -212,133 +206,167 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="Basildon Park img/20260421_120322.jpg"/>
-    <p><img class="mediaright" width="300"  src="https://www.nationaltrustimages.org.uk/AssetLink/l7bm5qi66s4kitt16x0ad4081rkm2613.jpg"/>
-    The Bamboo Bedroom was a part of a series of suites furnished by the Iliffes to act as guest suites. Compared to the Crimson Room you just left, the Bamboo Bedroom is a polar opposite in colour, with a more cream/white and pink colour scheme, echoing Chinese elements in its design. The wallpaper and paintings were both chosen by Lady Iliffe, while the frieze is an original component of the house; the doorcases, doors and carved wooden chimneypiece all came from Panton Hall, which was designed by Carr.
-</br><video class="medialeft" height="500" controls autoplay muted loop id="video">
-    <source src="Basildon Park img/20260421_120248.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
-</br>
-The bed is a survivor of the early 19th Century and was brought from Stoneleigh Abbey due to a disastrous fire and flooding that caused the need for funds to pay for repairs. The bed hangings were damaged and replaced by Lady Iliffe, but the fringe was rescued and reattached. In the cornices of the ceiling, there are still three little pipes coming out of the cornice, which are used for bell pulls similar to the bell pull in the dressing rooms. These were used to summon servants to come to attend to you. The Chinese figures on either bedside table are 19th-century medicine dolls used to indicate the symptoms of patients to their doctor, but have now been repurposed into lamps. The National Trust has continued this theme of Bamboo established by the Iliffes by hanging a large six-fold Rimpa- style Japanese screen depicting 3 white cranes against a golden background.
-</br><img class="mediaright" width="20" height="350" src="https://www.nationaltrustimages.org.uk/AssetLink/rik3467735ymrs3182302lyf327j45gt.jpg"/>
-</br>
-</br>
-The oriental theme is carried on the aquatints on either side of the overmantel glass, from Thomas and William Daniell’s <em>Oriental Scenery</em> . They made multiple views of Indian monuments, which were published between 1795 and 1808. Interpretations for this should show the 18th Century and 19th Century fascination with ‘exotic’ design and global influence, and the in turn influence that had on the styling of the Upper Class. When dealing with furnishings from Asia, it is important to question how these were collected, adapted and displayed as symbols of British wealth, taste and their imperial reach, bringing attention to colonial trade networks that allow access to imported materials while hiding the power struggles behind the extravagance. The room should also bring attention to how these historical attitudes and cultures are used in heritage spaces to create an historical atmosphere that is shaped by modern curatorial decisions.
-</p>
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
-const video = document.getElementById("video");
+    <img
+      class="mainImg"
+      src="Basildon Park img/20260421_120322.jpg"
+      alt="large six-fold Rimpa- style Japanese screen depicting 3 white cranes against a golden background"
+    />
+    <p>
+      <img
+        class="mediaright"
+        width="300"
+        src="https://www.nationaltrustimages.org.uk/AssetLink/l7bm5qi66s4kitt16x0ad4081rkm2613.jpg"
+        alt="Drawing hung in Bamboo Bedroom depicting Monument in India"
+      />
+      The Bamboo Bedroom was a part of a series of suites furnished by the
+      Iliffes to act as guest suites. Compared to the Crimson Room you just
+      left, the Bamboo Bedroom is a polar opposite in colour, with a more
+      cream/white and pink colour scheme, echoing Chinese elements in its
+      design. The wallpaper and paintings were both chosen by Lady Iliffe, while
+      the frieze is an original component of the house; the doorcases, doors and
+      carved wooden chimneypiece all came from Panton Hall, which was designed
+      by Carr.
+      <br /><video
+        class="medialeft"
+        height="500"
+        controls
+        autoplay
+        muted
+        loop
+        id="video"
+      >
+        <source
+          src="Basildon Park img/20260421_120248.mp4"
+          alt="Video of Bamboo Bedroom"
+          type="video/mp4"
+        />
+        Your browser does not support the video tag.
+      </video>
+      <br />
+      The bed is a survivor of the early 19th Century and was brought from
+      Stoneleigh Abbey due to a disastrous fire and flooding that caused the
+      need for funds to pay for repairs. The bed hangings were damaged and
+      replaced by Lady Iliffe, but the fringe was rescued and reattached. In the
+      cornices of the ceiling, there are still three little pipes coming out of
+      the cornice, which are used for bell pulls similar to the bell pull in the
+      dressing rooms. These were used to summon servants to come to attend to
+      you. The Chinese figures on either bedside table are 19th-century medicine
+      dolls used to indicate the symptoms of patients to their doctor, but have
+      now been repurposed into lamps. The National Trust has continued this
+      theme of Bamboo established by the Iliffes by hanging a large six-fold
+      Rimpa- style Japanese screen depicting 3 white cranes against a golden
+      background.
+      <br /><img
+        class="mediaright"
+        width="20"
+        height="350"
+        src="https://www.nationaltrustimages.org.uk/AssetLink/rik3467735ymrs3182302lyf327j45gt.jpg"
+        alt="Chinese figures turned into lamps"
+      />
+      <br />
+      <br />
+      The oriental theme is carried on the aquatints on either side of the
+      overmantel glass, from Thomas and William Daniell’s
+      <em>Oriental Scenery</em> . They made multiple views of Indian monuments,
+      which were published between 1795 and 1808. Interpretations for this
+      should show the 18th Century and 19th Century fascination with ‘exotic’
+      design and global influence, and the in turn influence that had on the
+      styling of the Upper Class. When dealing with furnishings from Asia, it is
+      important to question how these were collected, adapted and displayed as
+      symbols of British wealth, taste and their imperial reach, bringing
+      attention to colonial trade networks that allow access to imported
+      materials while hiding the power struggles behind the extravagance. The
+      room should also bring attention to how these historical attitudes and
+      cultures are used in heritage spaces to create an historical atmosphere
+      that is shaped by modern curatorial decisions.
+    </p>
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const video = document.getElementById("video");
 
-video.muted = true;
+      video.muted = true;
 
-video.addEventListener("volumechange", () => {
-    video.muted = true;
-    video.volume = 0;
-});
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+      video.addEventListener("volumechange", () => {
+        video.muted = true;
+        video.volume = 0;
+      });
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>
+        loadAccessibility();
+      });
+    </script>
   </body>
 </html>

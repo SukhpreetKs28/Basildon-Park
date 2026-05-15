@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Octagon Room</title>
     <style>
- body {
+      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
       }
@@ -14,176 +14,172 @@
         border-radius: 10px;
         padding: 25px;
       }
-       p{
+      p {
         font-size: 24px;
         width: 80%;
         height: auto;
         padding: 20px;
-         background-color: #dfe988;
+        background-color: #dfe988;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-      
       }
-       .topBar {
-        
+      .topBar {
         width: 100%;
         height: auto;
         padding: 10px;
-         background-color: #c9d655;
+        background-color: #c9d655;
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
         display: flex;
-  justify-content: center;
-  gap: 40px;
-  font-size: 20px;
-  font-weight: bold;
- 
+        justify-content: center;
+        gap: 40px;
+        font-size: 20px;
+        font-weight: bold;
       }
-h1{
-  font-size: 78px;
-  font-style: italic;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-      a{
-        color: darkgreen
+      h1 {
+        font-size: 78px;
+        font-style: italic;
+        color: white;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
       }
-      img{
-  width: 300;
-}
-video{ 
-    image-rendering: auto;
-    backface-visibility: hidden;
-    transform: translateZ(0);
-}
-.medialeft{
-  float: left;
-    width: 400px;
-    margin-right: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
+      a {
+        color: darkgreen;
+      }
+      img {
+        width: 300;
+      }
+      video {
+        image-rendering: auto;
+        backface-visibility: hidden;
+        transform: translateZ(0);
+      }
+      .medialeft {
+        float: left;
+        width: 400px;
+        margin-right: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      .mediaright {
+        float: right;
+        width: 400px;
+        margin-left: 20px;
+        margin-bottom: 10px;
+        border-radius: 10px;
+      }
+      img {
+        cursor: pointer;
+        transition: transform 0.2s;
+      }
 
-}
-.mediaright{
-  float: right;
-    width: 400px;
-    margin-left: 20px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    }
-    img {
-  cursor: pointer;
-  transition: transform 0.2s;
-}
+      img:hover {
+        transform: scale(1.05);
+      }
 
-img:hover {
-  transform: scale(1.05);
-}
+      .fullscreen-modal {
+        display: none;
+        position: fixed;
+        z-index: 1000;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+      }
 
-.fullscreen-modal {
-  display: none;
-  position: fixed;
-  z-index: 1000;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.9);
-}
+      .fullscreen-modal.active {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
 
-.fullscreen-modal.active {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+      .fullscreen-modal img {
+        max-width: 90%;
+        max-height: 90%;
+        object-fit: contain;
+      }
 
-.fullscreen-modal img {
-  max-width: 90%;
-  max-height: 90%;
-  object-fit: contain;
-}
+      .close-fullscreen {
+        position: absolute;
+        top: 20px;
+        right: 40px;
+        font-size: 40px;
+        font-weight: bold;
+        color: white;
+        cursor: pointer;
+      }
 
-.close-fullscreen {
-  position: absolute;
-  top: 20px;
-  right: 40px;
-  font-size: 40px;
-  font-weight: bold;
-  color: white;
-  cursor: pointer;
-}
+      .close-fullscreen:hover {
+        color: #ccc;
+      }
+      /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-.close-fullscreen:hover {
-  color: #ccc;
-}
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
-}
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        background-color: #111111 !important;
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
-.accessibility-mode h2,
-.accessibility-mode li {
-  background-color: #111111 !important;
-  color: yellow !important;
-  font-size: 28px;
-}
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -193,7 +189,6 @@ button:focus {
       href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap"
       rel="stylesheet"
     />
-    </style>
   </head>
   <body>
     <h1>Octagon Room</h1>
@@ -211,131 +206,181 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class="mainImg" src="https://www.nationaltrustimages.org.uk/AssetLink/hnayc6f741146c76fg1dqxc0p2x53c4i.jpg"/>
-    <p>This room is one of the house's unique features, with its unusual architectural design marking it as the most striking of the grand reception rooms. When the house was first built in 1776, the layout was split into an entertainment side and the family side. This room function was to entertain and had a warm tone to the room's atmosphere set by a large fire. Sadly, this room was never finished by Sykes and Carr due to insufficient funds, and this was formally declared in the 1829 Bill of Sale.
-</br><img class="mediaright"  src="https://www.nationaltrustimages.org.uk/AssetLink/ms2u20e0gjoioc17ubi046l11q06msxy.jpg"/>
-</br>
+    <img
+      class="mainImg"
+      src="https://www.nationaltrustimages.org.uk/AssetLink/hnayc6f741146c76fg1dqxc0p2x53c4i.jpg"
+      alt="Old Picture of Octagon Room from 1800s showing old paintings"
+    />
+    <p>
+      This room is one of the house's unique features, with its unusual
+      architectural design marking it as the most striking of the grand
+      reception rooms. When the house was first built in 1776, the layout was
+      split into an entertainment side and the family side. This room function
+      was to entertain and had a warm tone to the room's atmosphere set by a
+      large fire. Sadly, this room was never finished by Sykes and Carr due to
+      insufficient funds, and this was formally declared in the 1829 Bill of
+      Sale. <br /><img
+        class="mediaright"
+        src="https://www.nationaltrustimages.org.uk/AssetLink/ms2u20e0gjoioc17ubi046l11q06msxy.jpg"
+        alt="Painting of one of Apostles in room"
+      />
+      <br />
 
-Carr often included a range of novel-shaped rooms in his plans for country houses, a characteristic of the Palladian style. The room's location at the back of the house, looking out into the garden, enabled Carr to incorporate a canted bay into his design. In 1859, when Morrison bought the house, the room was finished with an ornate Victorian ceiling that reflected the Italian 16th Century. As the room was undecorated, Morrison decided to place the best of his Old Master paintings from his collection, as well as an opportunity to introduce a complete 19th-century decorative scheme that reflected his tastes and the popular trends of the period. This led Papworth to cover the walls in purple velvet, gilt papier-mâché strips at the angles of the room, and to install a fireplace, a rather large contrast in colouring to the now red it displays. Some of the paintings he displayed were by the ‘most distinguished modern English painter’, such as Turner, Constable, Hogarth, and Richard Wilson, and these were linked thematically to the room's entertainment function. 
-</br>
-</br><img class="medialeft" width="300" src="Basildon Park img/20260421_115054.jpg"/>
+      Carr often included a range of novel-shaped rooms in his plans for country
+      houses, a characteristic of the Palladian style. The room's location at
+      the back of the house, looking out into the garden, enabled Carr to
+      incorporate a canted bay into his design. In 1859, when Morrison bought
+      the house, the room was finished with an ornate Victorian ceiling that
+      reflected the Italian 16th Century. As the room was undecorated, Morrison
+      decided to place the best of his Old Master paintings from his collection,
+      as well as an opportunity to introduce a complete 19th-century decorative
+      scheme that reflected his tastes and the popular trends of the period.
+      This led Papworth to cover the walls in purple velvet, gilt papier-mâché
+      strips at the angles of the room, and to install a fireplace, a rather
+      large contrast in colouring to the now red it displays. Some of the
+      paintings he displayed were by the ‘most distinguished modern English
+      painter’, such as Turner, Constable, Hogarth, and Richard Wilson, and
+      these were linked thematically to the room's entertainment function.
+      <br />
+      <br /><img
+        class="medialeft"
+        width="300"
+        src="Basildon Park img/20260421_115054.jpg"
+        alt="Picture showing modern interior of octagon room"
+      />
 
-The Iliffes decided to redecorate the Octagon room, but took into account that what they chose had to harmonise with the elaborate ceiling left by Morrison. While wanting to preserve the 19th-century feel, they also wanted to suggest what the room may have been like during Sykes's time in the 18th century, but as Carr hadn’t completed the room, there was not much for them to go on to make it authentic. After initially covering the walls with white and gold paper, they recovered the room in 1954 with the felt now seen to this day, ‘plucked up the courage… put the felt on the wall and stretched it ourselves’. The choice of felt was due to the constraints rationing still being felt from the war, meaning there was very little material available. The colour was chosen for its popularity in the 18th Century as a background for paintings, the perfect choice for a room full of paintings, although they still used the room as their drawing room despite it housing their finest paintings. The room contained pieces recovered from many country-house sales, such as the silk curtains made in 1773 and an 18th-century ear harp piano. Another feature of this room is a pair of Neo-classical gilt pier-tables and mirrors of the 1780s that are from Brockenhurst Park and were sold in 1956, which Francis Egerton of Mallet acquired and placed in this room. The tables have marquetry tops that are supported by female figures based on those on the Erechtheum on the Acropolis at Athens. It was later that the National Trust preserved the room by placing an identical carpet on top of the 100-year-old carpet that is underneath in order to protect it while keeping the look the same as it was through the designs of its owners.
-</br>
-</br>
+      The Iliffes decided to redecorate the Octagon room, but took into account
+      that what they chose had to harmonise with the elaborate ceiling left by
+      Morrison. While wanting to preserve the 19th-century feel, they also
+      wanted to suggest what the room may have been like during Sykes's time in
+      the 18th century, but as Carr hadn’t completed the room, there was not
+      much for them to go on to make it authentic. After initially covering the
+      walls with white and gold paper, they recovered the room in 1954 with the
+      felt now seen to this day, ‘plucked up the courage… put the felt on the
+      wall and stretched it ourselves’. The choice of felt was due to the
+      constraints rationing still being felt from the war, meaning there was
+      very little material available. The colour was chosen for its popularity
+      in the 18th Century as a background for paintings, the perfect choice for
+      a room full of paintings, although they still used the room as their
+      drawing room despite it housing their finest paintings. The room contained
+      pieces recovered from many country-house sales, such as the silk curtains
+      made in 1773 and an 18th-century ear harp piano. Another feature of this
+      room is a pair of Neo-classical gilt pier-tables and mirrors of the 1780s
+      that are from Brockenhurst Park and were sold in 1956, which Francis
+      Egerton of Mallet acquired and placed in this room. The tables have
+      marquetry tops that are supported by female figures based on those on the
+      Erechtheum on the Acropolis at Athens. It was later that the National
+      Trust preserved the room by placing an identical carpet on top of the
+      100-year-old carpet that is underneath in order to protect it while
+      keeping the look the same as it was through the designs of its owners.
+      <br />
+      <br />
 
-The paintings are by far the most important aspect of this room, which features a series of paintings by Pompeo Batoni, an Italian painter of the Apostles, with five missing. These are: God the Father and Saints Peter, Paul, Matthew, John the Evangelist, Thomas, Andrew and James the Less. They were acquired by Lord Iliffe, reflecting a post-war revival of interest in Italian subject paintings, a re-emergence of the 18th-century trend among British Grand Tour Visitors. The last major change to the room occurred because the fireplace was so badly damaged during the WW2 occupation of the house that the Iliffes placed a door in its place, opening up the room and connecting it to the Green Drawing Room. The remaining supports of this fireplace are being used as plinths in the tea room. By opening up the room and creating a doorway, they had modernised the floorplan and thus blurred the lines between the structured divide between entertainment and family space that was put in place when the house was built, raising issues of authenticity.
-</br>
-</br>
+      The paintings are by far the most important aspect of this room, which
+      features a series of paintings by Pompeo Batoni, an Italian painter of the
+      Apostles, with five missing. These are: God the Father and Saints Peter,
+      Paul, Matthew, John the Evangelist, Thomas, Andrew and James the Less.
+      They were acquired by Lord Iliffe, reflecting a post-war revival of
+      interest in Italian subject paintings, a re-emergence of the 18th-century
+      trend among British Grand Tour Visitors. The last major change to the room
+      occurred because the fireplace was so badly damaged during the WW2
+      occupation of the house that the Iliffes placed a door in its place,
+      opening up the room and connecting it to the Green Drawing Room. The
+      remaining supports of this fireplace are being used as plinths in the tea
+      room. By opening up the room and creating a doorway, they had modernised
+      the floorplan and thus blurred the lines between the structured divide
+      between entertainment and family space that was put in place when the
+      house was built, raising issues of authenticity.
+      <br />
+      <br />
 
-This room is an example of the use of repurposing and attempting to make the room authentic to reflect a certain era of time. Interpretations of this room need to address the presumed attempt at authenticity and what that means for visitors. The room’s 20th-century restoration under Lord Iliffe draws attention to reconstructed details that may appear ‘original’. It thereby raises the question of asking visitors to reflect on how authenticity is actively curated rather than preserved.
-</p>
-<div class="fullscreen-modal" id="fullscreenModal">
-  <span class="close-fullscreen">&times;</span>
-  <img id="fullscreenImage" src="" alt="">
-</div>
-<script>
+      This room is an example of the use of repurposing and attempting to make
+      the room authentic to reflect a certain era of time. Interpretations of
+      this room need to address the presumed attempt at authenticity and what
+      that means for visitors. The room’s 20th-century restoration under Lord
+      Iliffe draws attention to reconstructed details that may appear
+      ‘original’. It thereby raises the question of asking visitors to reflect
+      on how authenticity is actively curated rather than preserved.
+    </p>
+    <div class="fullscreen-modal" id="fullscreenModal">
+      <span class="close-fullscreen">&times;</span>
+      <img id="fullscreenImage" src="" alt="" />
+    </div>
+    <script>
+      const modal = document.getElementById("fullscreenModal");
+      const fullscreenImg = document.getElementById("fullscreenImage");
+      const closeBtn = document.querySelector(".close-fullscreen");
 
-const modal = document.getElementById('fullscreenModal');
-const fullscreenImg = document.getElementById('fullscreenImage');
-const closeBtn = document.querySelector('.close-fullscreen');
+      // Make all images clickable for fullscreen
+      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
+        img.addEventListener("click", function () {
+          modal.classList.add("active");
+          fullscreenImg.src = this.src;
+        });
+      });
 
-// Make all images clickable for fullscreen
-document.querySelectorAll('img:not(#fullscreenImage)').forEach(img => {
-  img.addEventListener('click', function() {
-    modal.classList.add('active');
-    fullscreenImg.src = this.src;
-  });
-});
+      // Close fullscreen
+      closeBtn.addEventListener("click", function () {
+        modal.classList.remove("active");
+      });
 
-// Close fullscreen
-closeBtn.addEventListener('click', function() {
-  modal.classList.remove('active');
-});
+      modal.addEventListener("click", function (e) {
+        if (e.target === modal) {
+          modal.classList.remove("active");
+        }
+      });
 
-modal.addEventListener('click', function(e) {
-  if (e.target === modal) {
-    modal.classList.remove('active');
-  }
-});
+      // Close on Escape key
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          modal.classList.remove("active");
+        }
+      });
+      const accessibilityBtn = document.getElementById("accessibilityToggle");
 
-// Close on Escape key
-document.addEventListener('keydown', function(e) {
-  if (e.key === 'Escape') {
-    modal.classList.remove('active');
-  }
-});
- const accessibilityBtn =
-    document.getElementById(
-      "accessibilityToggle"
-    );
+      // LOAD SAVED ACCESSIBILITY MODE
+      function loadAccessibility() {
+        const enabled = localStorage.getItem("accessibility") === "enabled";
 
-  // LOAD SAVED ACCESSIBILITY MODE
-  function loadAccessibility() {
-
-    const enabled =
-      localStorage.getItem(
-        "accessibility"
-      ) === "enabled";
-
-    if (enabled) {
-      document.body.classList.add(
-        "accessibility-mode"
-      );
-    } else {
-      document.body.classList.remove(
-        "accessibility-mode"
-      );
-    }
-
-    // MAP SUPPORT
-    if (
-      typeof lightMap !== "undefined" &&
-      typeof darkMap !== "undefined"
-    ) {
-
-      if (enabled) {
-
-        if (map.hasLayer(lightMap)) {
-          map.removeLayer(lightMap);
+        if (enabled) {
+          document.body.classList.add("accessibility-mode");
+        } else {
+          document.body.classList.remove("accessibility-mode");
         }
 
-        darkMap.addTo(map);
+        // MAP SUPPORT
+        if (typeof lightMap !== "undefined" && typeof darkMap !== "undefined") {
+          if (enabled) {
+            if (map.hasLayer(lightMap)) {
+              map.removeLayer(lightMap);
+            }
 
-      } else {
+            darkMap.addTo(map);
+          } else {
+            if (map.hasLayer(darkMap)) {
+              map.removeLayer(darkMap);
+            }
 
-        if (map.hasLayer(darkMap)) {
-          map.removeLayer(darkMap);
+            lightMap.addTo(map);
+          }
         }
-
-        lightMap.addTo(map);
       }
-    }
-  }
 
-  // INITIAL LOAD
-  loadAccessibility();
+      // INITIAL LOAD
+      loadAccessibility();
 
-  // BUTTON TOGGLE
-  accessibilityBtn.addEventListener(
-    "click",
-    () => {
+      // BUTTON TOGGLE
+      accessibilityBtn.addEventListener("click", () => {
+        const currentlyEnabled =
+          document.body.classList.contains("accessibility-mode");
 
-      const currentlyEnabled =
-        document.body.classList.contains(
-          "accessibility-mode"
+        localStorage.setItem(
+          "accessibility",
+          currentlyEnabled ? "disabled" : "enabled"
         );
 
-      localStorage.setItem(
-        "accessibility",
-        currentlyEnabled
-          ? "disabled"
-          : "enabled"
-      );
-
-      loadAccessibility();
-    }
-  );
-</script>  
+        loadAccessibility();
+      });
+    </script>
   </body>
 </html>
