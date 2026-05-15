@@ -122,68 +122,69 @@ img:hover {
 .close-fullscreen:hover {
   color: #ccc;
 }
-/* ACCESSIBILITY BUTTON */
-#accessibilityToggle {
-  padding: 14px 24px;
-  margin: 20px;
-  border: none;
-  border-radius: 12px;
-  background: #111;
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-  font-weight: bold;
-}
+     /* ACCESSIBILITY BUTTON */
+      #accessibilityToggle {
+        padding: 14px 24px;
+        margin: 20px;
+        border: none;
+        border-radius: 12px;
+        background: #111;
+        color: white;
+        font-size: 20px;
+        cursor: pointer;
+        font-weight: bold;
+      }
 
-/* KEYBOARD ACCESSIBILITY */
-a:focus,
-button:focus {
-  outline: 4px solid yellow;
-  outline-offset: 4px;
-}
+      /* KEYBOARD ACCESSIBILITY */
+      a:focus,
+      button:focus {
+        outline: 4px solid yellow;
+        outline-offset: 4px;
+      }
 
-/* ACCESSIBILITY MODE */
-.accessibility-mode {
-  background: #000 !important;
-  color: #ffff66 !important;
-  font-family: 'Lexend', Arial, sans-serif;
-  line-height: 2;
-  letter-spacing: 1px;
+      /* ACCESSIBILITY MODE */
+      .accessibility-mode {
+        background: #000 !important;
+        color: #ffff66 !important;
+        font-family: "Lexend", Arial, sans-serif;
+        line-height: 2;
+        letter-spacing: 1px;
+      }
+      .accessibility-mode a,
+      .accessibility-mode h1 {
+        color: yellow !important;
+      }
+.accessibility-mode p {
+  background-color: #111111 !important;
 }
-.accessibility-mode a,
-.accessibility-mode h1{
-  color: yellow !important;
-}
+      .accessibility-mode p,
+      .accessibility-mode h2,
+      .accessibility-mode li {
+        color: yellow !important;
+        font-size: 28px;
+      }
 
-.accessibility-mode p,
+      /* PANELS */
+      .accessibility-mode .mainPage,
+      .accessibility-mode .topBar {
+        background: #111 !important;
+        border: 3px solid yellow !important;
+      }
 
-.accessibility-mode h2,
-.accessibility-mode li {
-  color: #000000 !important;
-  font-size: 28px;
-}
+      /* BIGGER BUTTONS */
+      .accessibility-mode button,
+      .accessibility-mode a {
+        min-height: 44px;
+        padding: 14px;
+      }
 
-/* PANELS */
-.accessibility-mode .mainPage,
-.accessibility-mode .topBar {
-  background: #111 !important;
-  border: 3px solid yellow !important;
-}
-
-/* BIGGER BUTTONS */
-.accessibility-mode button,
-.accessibility-mode a {
-  min-height: 44px;
-  padding: 14px;
-}
-
-/* REDUCED MOTION */
-.accessibility-mode *,
-.accessibility-mode *::before,
-.accessibility-mode *::after {
-  animation: none !important;
-  transition: none !important;
-}
+      /* REDUCED MOTION */
+      .accessibility-mode *,
+      .accessibility-mode *::before,
+      .accessibility-mode *::after {
+        animation: none !important;
+        transition: none !important;
+      }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
 
@@ -211,6 +212,7 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
+    <div class="content-wrapper">
     <img class = "mainImg" src="Basildon Park img/20260421_103839.jpg"/>
     <p>Sitting in 400 acres of historic parkland and gardens stretching towards the river Thames, this 18th Century  Palladian mansion that was built up this ancient estate using Neo-classical architecture between 1777-83 through the fortune of Sir Francis Sykes from his service in the East India Company, and through the subsequent years has fallen into the hands of a multitude of owners who have all adapted and added to this house either from their own collections or treasures procured from other houses.
 </br><video class="mediaright" width="300" controls autoplay muted loop id="video">
@@ -232,7 +234,7 @@ As a heritage site open to the public, Basildon Park offers a curated historical
 <div class="fullscreen-modal" id="fullscreenModal">
   <span class="close-fullscreen">&times;</span>
   <img id="fullscreenImage" src="" alt="">
-</div>
+</div></div>
 <script>
 const video = document.getElementById("video");
 
