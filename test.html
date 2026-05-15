@@ -25,7 +25,7 @@
       }
 
       .mainImg {
-        width: 70%;
+        width: 100%;
 
         border-radius: 10px;
         padding: 25px;
@@ -34,10 +34,14 @@
       .content-wrapper {
         display: flex;
         align-items: flex-start;
+        gap: 30px;
+        width: 95%;
+        margin: 0 auto;
       }
 
       .mainPage {
         width: 40%;
+
         height: auto;
         padding: 25px;
         background-color: #dfe988;
@@ -88,8 +92,6 @@
         width: 100%;
         border-radius: 10px;
         padding: 25px;
-
-        float: center;
 
         margin: 0 20px 20px 0;
       }
@@ -173,51 +175,6 @@
         border-radius: 15px;
         border: 3px solid #8aa94d;
         overflow: hidden;
-      }
-      img {
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
-
-      img:hover {
-        transform: scale(1.05);
-      }
-
-      .fullscreen-modal {
-        display: none;
-        position: fixed;
-        z-index: 1000;
-        left: 0;
-        top: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0, 0, 0, 0.9);
-      }
-
-      .fullscreen-modal.active {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .fullscreen-modal img {
-        max-width: 90%;
-        max-height: 90%;
-        object-fit: contain;
-      }
-
-      .close-fullscreen {
-        position: absolute;
-        top: 20px;
-        right: 40px;
-        font-size: 40px;
-        font-weight: bold;
-        color: white;
-        cursor: pointer;
-      }
-
-      .close-fullscreen:hover {
-        color: #ccc;
       }
       /* ACCESSIBILITY BUTTON */
       #accessibilityToggle {
@@ -320,7 +277,9 @@
           class="mainImg"
           src="Basildon Park img/20260421_125241.jpg"
           alt="Front exterior view of Basildon House"
-        /><span class="caption">Front exterior view of Basildon House</span>
+        /><span class="caption"
+          >Picture showcasing Bookcase of the Library</span
+        >
       </span>
 
       <div class="mainPage">
@@ -357,10 +316,7 @@
         >
       </div>
     </div>
-    <div class="fullscreen-modal" id="fullscreenModal">
-      <span class="close-fullscreen">&times;</span>
-      <img id="fullscreenImage" src="" alt="" />
-    </div>
+
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 
     <script>
@@ -423,36 +379,6 @@
           video.volume = 0;
         });
       }
-      const modal = document.getElementById("fullscreenModal");
-      const fullscreenImg = document.getElementById("fullscreenImage");
-      const closeBtn = document.querySelector(".close-fullscreen");
-
-      // Click image to enlarge
-      document.querySelectorAll("img:not(#fullscreenImage)").forEach((img) => {
-        img.addEventListener("click", function () {
-          modal.classList.add("active");
-          fullscreenImg.src = this.src;
-        });
-      });
-
-      // Close button
-      closeBtn.addEventListener("click", function () {
-        modal.classList.remove("active");
-      });
-
-      // Click outside image closes modal
-      modal.addEventListener("click", function (e) {
-        if (e.target === modal) {
-          modal.classList.remove("active");
-        }
-      });
-
-      // Escape key closes modal
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape") {
-          modal.classList.remove("active");
-        }
-      });
       const accessibilityBtn = document.getElementById("accessibilityToggle");
 
       // LOAD SAVED MODE

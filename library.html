@@ -38,7 +38,8 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        gap: 40px;
+        flex-wrap: wrap;
+        gap: 20px;
         font-size: 20px;
         font-weight: bold;
       }
@@ -58,6 +59,74 @@
         image-rendering: auto;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+      .box-container-main {
+        width: 70%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        display: block;
+        float: left;
+        width: 300px;
+        margin: 0 20px 20px 0;
+        text-align: left;
+      }
+
+      .box-container-left img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left span.caption {
+        display: block;
+        font-size: 18px;
+        font-family: "Georgia", serif;
+        font-weight: bold;
+        line-height: 1.4;
+        color: #000000;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .medialeft {
         float: left;
@@ -146,6 +215,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -206,11 +279,13 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img
-      class="mainImg"
-      src="https://i0.wp.com/www.getreadyforadventure.com/wp-content/uploads/2024/05/england-national-trust-basildon-park-interior-library.webp?resize=960%2C540&ssl=1"
-      alt="Picture showcasing Bookcase of the Library"
-    />
+    <span class="box-container-main">
+      <img
+        class="mainImg"
+        src="https://i0.wp.com/www.getreadyforadventure.com/wp-content/uploads/2024/05/england-national-trust-basildon-park-interior-library.webp?resize=960%2C540&ssl=1"
+        alt="Picture showcasing Bookcase of the Library"
+      /><span class="caption">Picture showcasing Bookcase of the Library</span>
+    </span>
     <p>
       To the left of the Entrance Hall, you will find the Library, a place
       recognisable due to its appearance in Downton Abbey. As soon as you step
@@ -227,6 +302,7 @@
       the opposing side of the Entrance Hall, belonging to Lady Illiffe.
       <br />
       <br />
+
       <video
         class="mediaright"
         height="500"
@@ -282,12 +358,16 @@
       comfort of reading.
       <br />
       <br />
-      <img
-        class="medialeft"
-        width="300"
-        src="https://www.sceen-it.com/Service/sceenit/sceen/thumb/4259.jpg/w/600/h/340/crop/true/nos/33907_09_DowntonAbbey_Basildon%20Park%20The%20Library%2001.jpg"
-        alt="Scene from Downton Abbey in the Library"
-      />
+      <span class="box-container-left">
+        <img
+          class="medialeft"
+          width="300"
+          src="https://www.sceen-it.com/Service/sceenit/sceen/thumb/4259.jpg/w/600/h/340/crop/true/nos/33907_09_DowntonAbbey_Basildon%20Park%20The%20Library%2001.jpg"
+          alt="Scene from Downton Abbey in the Library"
+        /><span class="caption"
+          ><strong>Scene from Downton Abbey in the Library</strong></span
+        ></span
+      >
       The library's most popular use today has been through the filming of
       various shows and films. A few key ones are; 2005 Pride and Prejudice as
       the setting of Netherfield Park Ball where Elizabeth hid in this room,

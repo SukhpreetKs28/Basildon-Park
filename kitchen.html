@@ -38,6 +38,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -59,11 +60,83 @@
         backface-visibility: hidden;
         transform: translateZ(0);
       }
-      .medialeft {
+
+      .box-container-left {
         float: left;
+        margin: 10px 20px 20px 0;
+        text-align: center;
         width: 400px;
-        margin-right: 20px;
-        margin-bottom: 10px;
+      }
+
+      .box-container-left img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .box-container-right {
+        float: right;
+        margin: 0 0 20px 20px;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-right img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .medialeft {
+        width: 400px;
+
         border-radius: 10px;
       }
       .mediaright {
@@ -146,6 +219,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -221,12 +298,15 @@
       giving a shock to the system after roaming through so many different rooms
       that echo different styles and eras. As soon as you walk in, you are in a
       grand open space, all the appliances and cupboards are a mint green, a
-      popular colour of the time. <br /><img
-        class="mediaright"
-        width="300"
-        src="Basildon Park img/20260421_122841.jpg"
-        alt="Ceiling of Kitchen"
-      />
+      popular colour of the time. <br />
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          width="300"
+          src="Basildon Park img/20260421_122841.jpg"
+          alt="Ceiling of Kitchen"
+        /><span class="caption">Ceiling of Kitchen</span>
+      </span>
       <br />
       This kitchen was originally used as a bedroom by both the Sykes and the
       Morrisons, as a women’s bedroom connected to the now Sutherland Room, but
@@ -234,13 +314,21 @@
       Morrison, he made it into his own personal bedroom with a door connecting
       to his anteroom and another to his Oak sitting room. His son, Charles,
       also used this as his bedroom, hanging portraits of his parents.
-      <br /><img
-        class="medialeft"
-        width="300"
-        height="600"
-        src="https://imgs.search.brave.com/aL61KVFHo19sEJYaPpYou__kTur6nvkVTZSDXbwC8iY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaW52ZW50/b3J5L21kL21kMzIy/MTgwMTAyMTUuanBn"
-        alt="Cookbook of recipes by Ruth Mott - Cook at Basildon House during Iliffe ownership of House"
-      />When the Iliffes moved in, they transformed the space into a 1950s
+      <br />
+      <span class="box-container-left">
+        <img
+          class="medialeft"
+          width="300"
+          height="600"
+          src="https://imgs.search.brave.com/aL61KVFHo19sEJYaPpYou__kTur6nvkVTZSDXbwC8iY/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9waWN0/dXJlcy5hYmVib29r/cy5jb20vaW52ZW50/b3J5L21kL21kMzIy/MTgwMTAyMTUuanBn"
+          alt="Cookbook of recipes by Ruth Mott - Cook at Basildon House during Iliffe ownership of House"
+        />
+        <span class="caption"
+          >Cookbook of recipes by Ruth Mott - Cook at Basildon House during
+          Iliffe ownership of House</span
+        >
+      </span>
+      When the Iliffes moved in, they transformed the space into a 1950s
       kitchen, with the appliances and cupboards being a mint green colour,
       which was popular at the time. This was a very modern addition to the
       house, as it was one of the first fitted kitchens in a country house, and

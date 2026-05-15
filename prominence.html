@@ -10,7 +10,7 @@
         text-align: center;
       }
       .mainImg {
-        width: auto;
+        width: 70%;
         border-radius: 10px;
         padding: 25px;
       }
@@ -50,6 +50,7 @@
         margin: 0 auto;
         display: flex;
   justify-content: center;
+    flex-wrap: wrap;
   gap: 40px;
   font-size: 20px;
   font-weight: bold;
@@ -74,6 +75,74 @@ video{
     backface-visibility: hidden;
     transform: translateZ(0);
 }
+  
+      .box-container-main {
+        width: 100%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+  
+  .box-container-right {
+        display: block;
+        float: right;
+        margin: 0 20px 20px 0;
+        text-align: center;
+      }
+
+      .box-container-right img {
+        display: block;
+         width: 700px;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right span.caption {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+      }
 .medialeft{
   float: left;
     width: 700px;
@@ -92,6 +161,7 @@ video{
     img {
   cursor: pointer;
   transition: transform 0.2s;
+  
 }
 
 img:hover {
@@ -162,6 +232,10 @@ button:focus {
   line-height: 2;
   letter-spacing: 1px;
 }
+.accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
 .accessibility-mode a,
 .accessibility-mode h1{
   color: yellow !important;
@@ -224,14 +298,19 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/library/discover-and-learn/film-and-tv/bridgerton/bridgerton-s3-check-usage.jpg?auto=webp&width=1440&crop=16:7&dpr=1" alt="Scene from 3rd season of bridgerton"/>
+    <span class="box-container-main">
+    <img class = "mainImg" src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/library/discover-and-learn/film-and-tv/bridgerton/bridgerton-s3-check-usage.jpg?auto=webp&width=1440&crop=16:7&dpr=1" alt="Scene from 3rd season of bridgerton"/><span class="caption">Scene from 3rd season of Bridgerton</span>
+      </span>
        <div class="content-box">
        <p>Basildon Park is famous for being one of the few houses of its kind to survive the impact of the 20th century on aristocratic life and is now a popular filming location and tourist attraction, finding new fame as a popular filming location. Its preserved Georgian interiors have made it ideal for period dramas, appearing as Netherfield Park in Pride & Prejudice (2005) and as Lady Grantham’s London residence, Grantham House, in Downton Abbey. The house has also featured in The Duchess and Marie Antoinette; its restorative efforts to preserve the 18th century make it a perfect place for a historical setting.
 <br>
 <br></p>
       <div class="list">
      <h4>Basildon Park in TV and Film:</h4>
-     <ul><img class="mediaright" width="300" src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/library/discover-and-learn/film-and-tv/downton-abbey/downton-abbey-cast-at-basildon-park-berkshire.jpg?auto=webp&width=1440&crop=16:7&dpr=1" alt="Cast from Downton Abbey in Octagon Room"/>
+     <ul>
+      <span class="box-container-right">
+              <img class="mediaright" width="300" src="https://nt.global.ssl.fastly.net/binaries/content/gallery/website/national/library/discover-and-learn/film-and-tv/downton-abbey/downton-abbey-cast-at-basildon-park-berkshire.jpg?auto=webp&width=1440&crop=16:7&dpr=1" alt="Cast from Downton Abbey in Octagon Room"/><span class="caption">Cast from Downton Abbey in Octagon Room</span>
+      </span>
 <li>Bridgerton (2020-present TV series)</li>
 <li>Downton Abbey (2013 TV series)</li>
 <li>The Royal Bodyguard (2011 TV series)</li>

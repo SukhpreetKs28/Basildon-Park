@@ -38,6 +38,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -59,6 +60,93 @@
         backface-visibility: hidden;
         transform: translateZ(0);
       }
+      .box-container-main {
+        width: 40%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        display: block;
+        float: left;
+        margin: 0 20px 20px 0;
+        text-align: center;
+      }
+
+      .box-container-left img {
+        display: block;
+
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left span.caption {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .box-container-right {
+        display: block;
+        float: right;
+        margin: 0 20px 20px 0;
+        text-align: center;
+      }
+
+      .box-container-right img {
+        display: block;
+
+        border-radius: 10px;
+      }
+
+      .box-container-right span.caption {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+      }
       .medialeft {
         float: left;
         width: 400px;
@@ -68,7 +156,6 @@
       }
       .mediaright {
         float: right;
-        width: 400px;
         margin-left: 20px;
         margin-bottom: 10px;
         border-radius: 10px;
@@ -146,6 +233,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -206,12 +297,14 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-
-    <img
-      class="mainImg"
-      src="https://superscout.ai/wp-content/uploads/2025/09/C412-19R-1-2-1024x669.jpg"
-      alt="Loggia Pride and Prejudice Image"
-    />
+    <span class="box-container-main">
+      <img
+        class="mainImg"
+        src="https://superscout.ai/wp-content/uploads/2025/09/C412-19R-1-2-1024x669.jpg"
+        alt="Loggia Pride and Prejudice Image"
+      />
+      <span class="caption">Loggia Pride and Prejudice Image</span>
+    </span>
 
     <p>
       The central archway in the basement leads to a shadowed vestibule flanked
@@ -225,12 +318,16 @@
       with protection from the elements when moving between their carriages and
       the house. The openness of the view is a main feature of the outside of
       the house, where you can stand in the pinnacle of wealth and be a small
-      step away from the surrounding woodland and landscape. <br /><img
-        class="mediaright"
-        width="300"
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaXe8PdMOTgZc3QIY6-XgfiKS6YybZUHukVw&s"
-        alt="View of Loggia at Ground Floor"
-      />
+      step away from the surrounding woodland and landscape. <br />
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          width="300"
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSaXe8PdMOTgZc3QIY6-XgfiKS6YybZUHukVw&s"
+          alt="View of Loggia at Ground Floor"
+        />
+        <span class="caption">View of Loggia at Ground Floor</span>
+      </span>
       <br />
       The Loggia portrays the neoclassical ideals of harmony and visual order,
       as seen in the symmetry of the four columns, which echo Italian influence.
@@ -239,12 +336,16 @@
       refinement and the surrounding countryside. It is more than a simple
       passageway; it shapes how visitors experience movement, landscape and
       status within the country house environment.
-      <br /><img
-        class="medialeft"
-        width="300"
-        src="Basildon Park img/20260421_110004.jpg"
-        alt="Loggia View"
-      />
+      <br />
+      <span class="box-container-left">
+        <img
+          class="medialeft"
+          width="300"
+          src="Basildon Park img/20260421_110004.jpg"
+          alt="View from Loggia"
+        />
+        <span class="caption">View from Loggia</span>
+      </span>
       <br />
       18th-century estates were designed to project wealth, control, and their
       own sense of elite sophistication, with the Loggia functioning as a

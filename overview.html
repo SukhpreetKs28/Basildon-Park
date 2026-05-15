@@ -38,7 +38,8 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
-        gap: 40px;
+        flex-wrap: wrap;
+        gap: 20px;
         font-size: 20px;
         font-weight: bold;
       }
@@ -58,6 +59,73 @@
         image-rendering: auto;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+      .box-container-main {
+        width: 70%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        display: block;
+        float: left;
+        width: 300px;
+        margin: 0 20px 20px 0;
+        text-align: left;
+      }
+
+      .box-container-left img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left span.caption {
+        display: block;
+        font-size: 18px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .medialeft {
         float: left;
@@ -146,16 +214,19 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
       }
-      .accessibility-mode p {
-        background-color: #111111 !important;
-      }
+
       .accessibility-mode p,
       .accessibility-mode h2,
       .accessibility-mode li {
+        background-color: #111111 !important;
         color: yellow !important;
         font-size: 28px;
       }
@@ -208,11 +279,13 @@
       <a href="secondfloor.html">Second Floor</a>
     </div>
     <div class="content-wrapper">
-      <img
-        class="mainImg"
-        src="Basildon Park img/20260421_103839.jpg"
-        alt="Side view on Walk up to Basildon House"
-      />
+      <span class="box-container-main">
+        <img
+          class="mainImg"
+          src="Basildon Park img/20260421_103839.jpg"
+          alt="Side view on Walk up to Basildon House"
+        /><span class="caption">Side view on Walk up to Basildon House</span>
+      </span>
       <p>
         Sitting in 400 acres of historic parkland and gardens stretching towards
         the river Thames, this 18th Century Palladian mansion that was built up
@@ -262,11 +335,19 @@
         during both World Wars and was later bought by Lord and Lady Illiffe in
         the 1950s, who renovated and restored the interior over 25 years, after
         which they gave it to the National Trust to care for.
-        <br /><img
-          class="medialeft"
-          src="Basildon Park img/20260421_104212.jpg"
-          alt="Shows the unique format of the back of the House due to the design of the Octagon Room"
-        />
+        <br />
+        <span class="box-container-left">
+          <img
+            class="medialeft"
+            src="Basildon Park img/20260421_104212.jpg"
+            alt="Shows the unique format of the back of the House due to the design of the Octagon Room"
+          /><span class="caption"
+            ><strong
+              >Shows the unique format of the back of the House due to the
+              design of the Octagon Room</strong
+            ></span
+          ></span
+        >
         <br />
         The Mansion houses a collection of 17th–20th-century English and
         European paintings, including a series paintings of the Apostles by

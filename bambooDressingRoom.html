@@ -17,7 +17,7 @@
       }
       .mainbody {
         font-size: 24px;
-        width: 70%;
+        width: 60%;
         height: auto;
         padding: 30px;
         background-color: #dfe988;
@@ -51,6 +51,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -71,6 +72,73 @@
         image-rendering: auto;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+      .box-container-main {
+        width: 40%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        float: left;
+        margin: 0 20px 20px 0;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-left img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .medialeft {
         float: left;
@@ -159,6 +227,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -219,18 +291,26 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img
-      class="mainImg"
-      src="Basildon Park img/20260421_120545.jpg"
-      alt="Chinese Coromandel lacquer folding screen"
-    />
-    <p class="mainbody">
+    <span class="box-container-main">
       <img
-        class="medialeft"
-        src="Basildon Park img/20260421_120407.jpg"
-        alt="Drawings hung in Bamboo Dressing Room of Monuments in India"
-      />Set behind the columns of the Loggia, the view from the window reveals
-      the finely carved Roman Ionic capitals atop the columns, possibly based on
+        class="mainImg"
+        src="Basildon Park img/20260421_120545.jpg"
+        alt="Chinese Coromandel lacquer folding screen"
+      /><span class="caption">Chinese Coromandel lacquer folding screen</span>
+    </span>
+    <p class="mainbody">
+      <span class="box-container-left">
+        <img
+          class="medialeft"
+          src="Basildon Park img/20260421_120407.jpg"
+          alt="Drawings hung in Bamboo Dressing Room of Monuments in India"
+        />
+        <span class="caption"
+          >Drawings hung in Bamboo Dressing Room of Monuments in India</span
+        >
+      </span>
+      Set behind the columns of the Loggia, the view from the window reveals the
+      finely carved Roman Ionic capitals atop the columns, possibly based on
       Piranesi's engravings. This room was primarily used as a dressing room
       that has been turned into a small guest bedroom by the Iliffes and was
       once used in the 2019 Documentary ‘The Windsors’.

@@ -38,6 +38,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -58,6 +59,95 @@
         image-rendering: auto;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+      .box-container-main {
+        width: 40%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        display: block;
+        float: left;
+        margin: 0 20px 20px 0;
+        text-align: center;
+      }
+
+      .box-container-left img {
+        display: block;
+
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left span.caption {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .box-container-right {
+        float: right;
+        margin: 0 0 20px 20px;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-right img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .medialeft {
         float: left;
@@ -146,6 +236,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -206,18 +300,27 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img
-      class="mainImg"
-      src="Basildon Park img/20260421_120322.jpg"
-      alt="large six-fold Rimpa- style Japanese screen depicting 3 white cranes against a golden background"
-    />
-    <p>
+    <span class="box-container-main">
       <img
-        class="mediaright"
-        width="300"
-        src="https://www.nationaltrustimages.org.uk/AssetLink/l7bm5qi66s4kitt16x0ad4081rkm2613.jpg"
-        alt="Drawing hung in Bamboo Bedroom depicting Monument in India"
-      />
+        class="mainImg"
+        src="Basildon Park img/20260421_120322.jpg"
+        alt="large six-fold Rimpa- style Japanese screen depicting 3 white cranes against a golden background"
+      /><span class="caption"
+        >Large six-fold Rimpa- style Japanese screen depicting 3 white cranes
+        against a golden background</span
+      >
+    </span>
+    <p>
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          width="300"
+          src="https://www.nationaltrustimages.org.uk/AssetLink/l7bm5qi66s4kitt16x0ad4081rkm2613.jpg"
+          alt="Drawing hung in Bamboo Bedroom depicting Monument in India"
+        /><span class="caption"
+          >Drawing hung in Bamboo Bedroom depicting Monument in India</span
+        >
+      </span>
       The Bamboo Bedroom was a part of a series of suites furnished by the
       Iliffes to act as guest suites. Compared to the Crimson Room you just
       left, the Bamboo Bedroom is a polar opposite in colour, with a more
@@ -243,6 +346,15 @@
         Your browser does not support the video tag.
       </video>
       <br />
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          width="20"
+          height="350"
+          src="https://www.nationaltrustimages.org.uk/AssetLink/rik3467735ymrs3182302lyf327j45gt.jpg"
+          alt="Chinese figures turned into lamps"
+        /><span class="caption">Chinese figures turned into lamps</span>
+      </span>
       The bed is a survivor of the early 19th Century and was brought from
       Stoneleigh Abbey due to a disastrous fire and flooding that caused the
       need for funds to pay for repairs. The bed hangings were damaged and
@@ -256,13 +368,9 @@
       theme of Bamboo established by the Iliffes by hanging a large six-fold
       Rimpa- style Japanese screen depicting 3 white cranes against a golden
       background.
-      <br /><img
-        class="mediaright"
-        width="20"
-        height="350"
-        src="https://www.nationaltrustimages.org.uk/AssetLink/rik3467735ymrs3182302lyf327j45gt.jpg"
-        alt="Chinese figures turned into lamps"
-      />
+
+      <br />
+
       <br />
       <br />
       The oriental theme is carried on the aquatints on either side of the

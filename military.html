@@ -8,6 +8,7 @@
      body {
         background: radial-gradient(circle, #45692d, #666d27);
         text-align: center;
+        
       }
       .mainImg {
         width: 70%;
@@ -23,12 +24,15 @@
         border: 2px solid #b3f786;
         border-radius: 10px;
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        text-align: left;
         margin: 0 auto;
       
       }
        .topBar {
-        
+         display: flex;
+  justify-content: center;
+   flex-wrap: wrap;
+  gap: 20px;
         width: 100%;
         height: auto;
         padding: 10px;
@@ -38,9 +42,7 @@
         box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         text-align: center;
         margin: 0 auto;
-        display: flex;
-  justify-content: center;
-  gap: 40px;
+       
   font-size: 20px;
   font-weight: bold;
  
@@ -66,6 +68,84 @@ h1{
     border-radius: 10px;
 
 }
+
+.box-container-main {
+    width: 70%;
+        border-radius: 10px;
+        padding: 25px;
+
+  float: center;
+  
+  margin: 0 20px 20px 0;
+  
+}
+.box-container-main span.caption {
+  display: block;
+  font-size: 20px;
+  font-family: "Georgia", serif;
+  line-height: 1.4;
+  color: #ffffff;
+}
+
+.box-container-left {
+  display: block;
+  float: left;
+  width: 300px;
+  margin: 0 20px 20px 0;
+  text-align: left;
+}
+
+.box-container-left img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+
+.box-container-left img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.box-container-left span.caption {
+  display: block;
+  font-size: 18px;
+ font-family: "Georgia", serif;
+  line-height: 1.4;
+  color: #000000;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+  gap: 24px;
+  justify-content: center;
+  align-items: start;
+  width: 84%;
+  max-width: 1200px;
+  margin: 0 auto 20px;
+}
+
+.content-grid p {
+  width: auto;
+  margin: 0;
+}
+
+.box-container .medialeft {
+  float: none;
+  width: 100%;
+  margin: 0;
+}
+
+@media (max-width: 840px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 .mediaright{
   float: right;
     width: 700px;
@@ -81,6 +161,8 @@ h1{
 img:hover {
   transform: scale(1.05);
 }
+
+
 
 .fullscreen-modal {
   display: none;
@@ -146,8 +228,13 @@ button:focus {
   line-height: 2;
   letter-spacing: 1px;
 }
+.accessibility-mode .caption {
+  color: yellow !important;
+  background-color: #111 !important;
+}
 .accessibility-mode a,
-.accessibility-mode h1{
+.accessibility-mode h1
+{
   color: yellow !important;
 }
 
@@ -208,8 +295,13 @@ button:focus {
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img class = "mainImg" src="https://www.nationaltrustimages.org.uk/AssetLink/8bi7h1p0q43158860soipbf8odyo2653.jpg" alt="Old picture of army standing in formations"/>
-<p><img class="medialeft" width="300"  src="https://www.nationaltrustimages.org.uk/AssetLink/a8m8s3l5kf0c23mjuc0fiylnb6n6c81b.jpg" alt="Old picture of soldiers in front of house going to training"/>Basildon was turned into a 50-bed convalescent home during World War One, housing officers of the Grenadier Guards and the White House in Lower Basildon, which housed local men of all ranks, with a training centre being established in the park for disabled soldiers and sailors to learn various trades. Patients' records can be found in the National and local archives for those injured who stayed at the House during this time. 60 members of the Women’s Land Army ran the estate, producing a large number of goods for consumption in the hospitals; they were also involved in charcoal burning and brickmaking. Archie Morrison, who returned to active duty as a Grenadier Guards Captain, supported these ventures with his personal fortune, but it was after the failure of his marriage that he sold the contents and, in 1929, the estate.
+    <span class="box-container-main">
+      <img class = "mainImg" src="https://www.nationaltrustimages.org.uk/AssetLink/8bi7h1p0q43158860soipbf8odyo2653.jpg" alt="Old picture of army standing in formations" data-caption="Old picture of army standing in formations" /><span class="caption">Old picture of army standing in formations</span>
+    </span>
+    <p><span class="box-container-left">
+        <img class="medialeft" src="https://www.nationaltrustimages.org.uk/AssetLink/a8m8s3l5kf0c23mjuc0fiylnb6n6c81b.jpg" alt="Old picture of soldiers in front of house going to training" />
+        <span class="caption"><strong>Old picture of soldiers in front of house going to training</strong></span>
+      </span>Basildon was turned into a 50-bed convalescent home during World War One, housing officers of the Grenadier Guards and the White House in Lower Basildon, which housed local men of all ranks, with a training centre being established in the park for disabled soldiers and sailors to learn various trades. Patients' records can be found in the National and local archives for those injured who stayed at the House during this time. 60 members of the Women’s Land Army ran the estate, producing a large number of goods for consumption in the hospitals; they were also involved in charcoal burning and brickmaking. Archie Morrison, who returned to active duty as a Grenadier Guards Captain, supported these ventures with his personal fortune, but it was after the failure of his marriage that he sold the contents and, in 1929, the estate.
 <br>
 <br>
 During WW2, Basildon was requisitioned in 1940, with Canadian soldiers arriving first, where they were seen shooting at tree trunks to know ‘how big a tree they had to get behind before they were safe from a bullet’. The house was used as the soldiers' training ground and suffered extensive damage to its interiors and grounds, most notably the fire that broke out in what was the Mess Room or, as we know it, Lady Iliffe’s Bedroom. The house served as a base for Easy Company of the 101st Airborne Division  <em>(the legendary “Band of Brothers”)</em> as they prepared for D-Day. Some of the damage left behind included graffiti on walls, with messages, drawings, and names of those who would be heading to Normandy. While this was restored, the National Trust preserved some examples as a reminder and proof of this period in the house's history.

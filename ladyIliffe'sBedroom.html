@@ -39,6 +39,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -59,6 +60,57 @@
         image-rendering: auto;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+
+      .box-container-right {
+        float: right;
+        margin: 0 0 20px 20px;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-right img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .medialeft {
         float: left;
@@ -147,6 +199,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -216,13 +272,17 @@
       Your browser does not support the video tag.
     </video>
     <p>
-      <img
-        class="mediaright"
-        width="200"
-        height="600"
-        src="https://www.nationaltrustimages.org.uk/AssetLink/ye6a785lhydekua88c2n014g12c3h8pl.jpg"
-        alt="Portrait of Young Lady Iliffe hung in Bedroom"
-      />
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          width="200"
+          height="600"
+          src="https://www.nationaltrustimages.org.uk/AssetLink/ye6a785lhydekua88c2n014g12c3h8pl.jpg"
+          alt="Portrait of Young Lady Iliffe hung in Bedroom"
+        /><span class="caption"
+          >Portrait of Young Lady Iliffe hung in Bedroom</span
+        >
+      </span>
 
       This bedroom, unlike any other, is the only one with an alcove with a
       decorated ceiling. It resides on the side of the house designated the

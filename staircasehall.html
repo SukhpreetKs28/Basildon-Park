@@ -38,6 +38,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -59,6 +60,95 @@
         backface-visibility: hidden;
         transform: translateZ(0);
       }
+      .box-container-main {
+        width: 40%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        display: block;
+        float: left;
+        margin: 0 20px 20px 0;
+        text-align: center;
+      }
+
+      .box-container-left img {
+        display: block;
+
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left span.caption {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .box-container-right {
+        float: right;
+        margin: 0 0 20px 20px;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-right img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+      }
       .medialeft {
         float: left;
         width: 400px;
@@ -67,10 +157,8 @@
         border-radius: 10px;
       }
       .mediaright {
-        float: right;
         width: 400px;
-        margin-left: 20px;
-        margin-bottom: 10px;
+        display: block;
         border-radius: 10px;
       }
       img {
@@ -146,6 +234,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -206,24 +298,34 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img
-      class="mainImg"
-      src="Basildon Park img/20260421_111609.jpg"
-      alt="Remains of old ceiling that collapsed after WW2 displayed in Staircase Hall"
-    />
-    <p>
+    <span class="box-container-main">
       <img
-        class="medialeft"
-        width="300"
-        height="400"
-        src="Basildon Park img/20260421_111621.jpg"
-        alt="View of the staircase hall from the ground floor"
-        alt="Close-up of the staircase railing"
-      />When you finally exit the Entrance Hall to venture deeper into the
-      house, you are met with a grand staircase in a hall that is full of
-      oddities. This forms a link for the majority of the house and is regarded
-      as one of Carr’s most monumental interiors, using a skilful handling of
-      both architecture, space and light. The stone staircase is anchored to the
+        class="mainImg"
+        src="Basildon Park img/20260421_111609.jpg"
+        alt="Remains of old ceiling that collapsed after WW2 displayed in Staircase Hall"
+      /><span class="caption"
+        >Remains of old ceiling that collapsed after WW2 displayed in Staircase
+        Hall</span
+      >
+    </span>
+    <p>
+      <span class="box-container-left">
+        <img
+          class="medialeft"
+          width="300"
+          height="500"
+          src="Basildon Park img/20260421_111621.jpg"
+          alt="View of the staircase hall from the ground floor"
+        />
+        <span class="caption"
+          >View of the staircase hall from the ground floor</span
+        >
+      </span>
+      When you finally exit the Entrance Hall to venture deeper into the house,
+      you are met with a grand staircase in a hall that is full of oddities.
+      This forms a link for the majority of the house and is regarded as one of
+      Carr’s most monumental interiors, using a skilful handling of both
+      architecture, space and light. The stone staircase is anchored to the
       wall, reaching the upper floor to a galleried landing. Looking up from
       below, you can marvel at the uses of archways and the small glances you
       can catch of the rooms upstairs. The stairs themselves are decorated with
@@ -233,13 +335,19 @@
       casts for the new medallions.
       <br />
       <br />
-      <img
-        class="mediaright"
-        width="300"
-        height="400"
-        src="Basildon Park img/20260421_111557.jpg"
-        alt="View of some of valuables of dispaly and close up of wall mouldings"
-      />
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          width="300"
+          height="500"
+          src="Basildon Park img/20260421_111557.jpg"
+          alt="View of some of valuables of dispaly and close up of wall mouldings"
+        />
+        <span class="caption"
+          >View of some of valuables of dispaly and close up of wall
+          mouldings</span
+        >
+      </span>
       On the ground floor of this room, you can see multiple doors, many of
       which lead nowhere but are included to follow the architectural ideal of
       symmetry, a recurring theme throughout the house. Above each door, there

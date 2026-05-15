@@ -39,6 +39,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -59,6 +60,96 @@
         image-rendering: auto;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+      .box-container-main {
+        width: 40%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        float: left;
+        margin: 10px 20px 20px 0;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-left img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .box-container-right {
+        float: right;
+        margin: 0 0 20px 20px;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-right img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .medialeft {
         float: left;
@@ -147,6 +238,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -207,18 +302,26 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img
-      class="mainImg"
-      src="Basildon Park img/20260421_121920.jpg"
-      alt="Picture of Bed and bed curtains of Green Chintz Room"
-    />
-    <p>
+    <span class="box-container-main">
       <img
-        class="medialeft"
-        width="300"
-        src="Basildon Park img/20260421_121914.jpg"
-        alt="Portraits hung in Green Chintz Room"
-      />This room is a mix of modern and old furnishings from a room on the
+        class="mainImg"
+        src="Basildon Park img/20260421_121920.jpg"
+        alt="Picture of Bed and bed curtains of Green Chintz Room"
+      /><span class="caption"
+        >Picture of Bed and bed curtains of Green Chintz Room</span
+      >
+    </span>
+    <p>
+      <span class="box-container-left">
+        <img
+          class="medialeft"
+          width="300"
+          src="Basildon Park img/20260421_121914.jpg"
+          alt="Portraits hung in Green Chintz Room"
+        />
+        <span class="caption">Portraits hung in Green Chintz Room</span>
+      </span>
+      This room is a mix of modern and old furnishings from a room on the
       Regent’s side of the house. Named after the hanging on the domed bed that
       was originally hung with green chintz, whereas now only remnants can be
       seen through the bed linings that are composed of the original chintz and
@@ -226,12 +329,15 @@
       had a glaze on them that, although faded from sunlight, has largely
       retained its colour.
       <br />
-      <br /><img
-        class="mediaright"
-        width="300"
-        src="Basildon Park img/20260421_122453.jpg"
-        alt="Tea cups on display in Green Chintz Room"
-      />
+      <br />
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          width="300"
+          src="Basildon Park img/20260421_122453.jpg"
+          alt="Tea cups on display in Green Chintz Room"
+        /><span class="caption">Tea cups on display in Green Chintz Room</span>
+      </span>
       The <em>lit a la Polonaise</em> (hangings on the domed bed) itself came
       from the Ditchley Park sale in Oxfordshire and was made in 1790 for the
       12th Viscount Dillon, with which this guest bedroom is closely associated,

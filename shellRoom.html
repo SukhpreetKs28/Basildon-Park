@@ -38,6 +38,7 @@
         margin: 0 auto;
         display: flex;
         justify-content: center;
+        flex-wrap: wrap;
         gap: 40px;
         font-size: 20px;
         font-weight: bold;
@@ -58,6 +59,95 @@
         image-rendering: auto;
         backface-visibility: hidden;
         transform: translateZ(0);
+      }
+      .box-container-main {
+        width: 40%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        display: block;
+        float: left;
+        margin: 0 20px 20px 0;
+        text-align: center;
+      }
+
+      .box-container-left img {
+        display: block;
+
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left span.caption {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .box-container-right {
+        float: right;
+        margin: 0 0 20px 20px;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-right img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
       }
       .medialeft {
         float: left;
@@ -146,6 +236,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -206,11 +300,15 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img
-      class="mainImg"
-      src="Basildon Park img/20260421_120727.jpg"
-      alt="Picture of Cabinet designed by shells inShell Room"
-    />
+    <span class="box-container-main">
+      <img
+        class="mainImg"
+        src="Basildon Park img/20260421_120727.jpg"
+        alt="Picture of Cabinet designed by shells in Shell Room"
+      /><span class="caption"
+        >Picture of Cabinet designed by shells in Shell Room</span
+      >
+    </span>
     <p>
       <video
         class="mediaright"
@@ -256,13 +354,17 @@
       study the collection, and due to his passion, she gifted him part of the
       collection that is now held at Amgueddfa Cymru (National Museum Wales) in
       1981.
-      <br /><img
-        class="medialeft"
-        width="100"
-        src="Basildon Park img/20260421_120706.jpg"
-        alt="Display case in Shell Room"
-      />
       <br />
+
+      <br />
+      <span class="box-container-left">
+        <img
+          class="medialeft"
+          width="100"
+          src="Basildon Park img/20260421_120706.jpg"
+          alt="Display case in Shell Room"
+        /><span class="caption">Display case in Shell Room</span>
+      </span>
       In 1979, the National Trust decorated the room to resemble a shell grotto,
       much like the one created by Mary Fane at the dower house on the Basildon
       estate, where she lived after the sale of the main house to Sykes in 1771.

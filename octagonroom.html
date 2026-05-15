@@ -59,6 +59,95 @@
         backface-visibility: hidden;
         transform: translateZ(0);
       }
+      .box-container-main {
+        width: 40%;
+        border-radius: 10px;
+        padding: 25px;
+
+        float: center;
+
+        margin: 0 20px 20px 0;
+      }
+      .box-container-main span.caption {
+        display: block;
+        font-size: 20px;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #ffffff;
+      }
+
+      .box-container-left {
+        display: block;
+        float: left;
+        margin: 0 20px 20px 0;
+        text-align: center;
+      }
+
+      .box-container-left img {
+        display: block;
+
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-left span.caption {
+        display: block;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .box-container-right {
+        float: right;
+        margin: 0 0 20px 20px;
+        text-align: center;
+        width: 400px;
+      }
+
+      .box-container-right img {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .box-container-right .caption {
+        display: block;
+        margin-top: 8px;
+        font-size: 18px;
+        font-weight: bold;
+        font-family: "Georgia", serif;
+        line-height: 1.4;
+        color: #000000;
+      }
+      .content-grid {
+        display: grid;
+        grid-template-columns: minmax(280px, 300px) minmax(320px, 1fr);
+        gap: 24px;
+        justify-content: center;
+        align-items: start;
+        width: 84%;
+        max-width: 1200px;
+        margin: 0 auto 20px;
+      }
+
+      .content-grid p {
+        width: auto;
+        margin: 0;
+      }
+
+      .box-container .medialeft {
+        float: none;
+        width: 100%;
+        margin: 0;
+      }
+
+      @media (max-width: 840px) {
+        .content-grid {
+          grid-template-columns: 1fr;
+        }
+      }
       .medialeft {
         float: left;
         width: 400px;
@@ -68,7 +157,6 @@
       }
       .mediaright {
         float: right;
-        width: 400px;
         margin-left: 20px;
         margin-bottom: 10px;
         border-radius: 10px;
@@ -146,6 +234,10 @@
         line-height: 2;
         letter-spacing: 1px;
       }
+      .accessibility-mode .caption {
+        color: yellow !important;
+        background-color: #111 !important;
+      }
       .accessibility-mode a,
       .accessibility-mode h1 {
         color: yellow !important;
@@ -206,11 +298,15 @@
       <a href="firstfloor.html">First Floor</a>
       <a href="secondfloor.html">Second Floor</a>
     </div>
-    <img
-      class="mainImg"
-      src="https://www.nationaltrustimages.org.uk/AssetLink/hnayc6f741146c76fg1dqxc0p2x53c4i.jpg"
-      alt="Old Picture of Octagon Room from 1800s showing old paintings"
-    />
+    <span class="box-container-main">
+      <img
+        class="mainImg"
+        src="https://www.nationaltrustimages.org.uk/AssetLink/hnayc6f741146c76fg1dqxc0p2x53c4i.jpg"
+        alt="Old Picture of Octagon Room from 1800s showing old paintings"
+      /><span class="caption"
+        >Old Picture of Octagon Room from 1800s showing old paintings</span
+      >
+    </span>
     <p>
       This room is one of the house's unique features, with its unusual
       architectural design marking it as the most striking of the grand
@@ -219,11 +315,14 @@
       was to entertain and had a warm tone to the room's atmosphere set by a
       large fire. Sadly, this room was never finished by Sykes and Carr due to
       insufficient funds, and this was formally declared in the 1829 Bill of
-      Sale. <br /><img
-        class="mediaright"
-        src="https://www.nationaltrustimages.org.uk/AssetLink/ms2u20e0gjoioc17ubi046l11q06msxy.jpg"
-        alt="Painting of one of Apostles in room"
-      />
+      Sale. <br />
+      <span class="box-container-right">
+        <img
+          class="mediaright"
+          src="https://www.nationaltrustimages.org.uk/AssetLink/ms2u20e0gjoioc17ubi046l11q06msxy.jpg"
+          alt="Painting of one of Apostles in room"
+        /><span class="caption">Painting of one of Apostles in room</span>
+      </span>
       <br />
 
       Carr often included a range of novel-shaped rooms in his plans for country
@@ -242,12 +341,16 @@
       painter’, such as Turner, Constable, Hogarth, and Richard Wilson, and
       these were linked thematically to the room's entertainment function.
       <br />
-      <br /><img
-        class="medialeft"
-        width="300"
-        src="Basildon Park img/20260421_115054.jpg"
-        alt="Picture showing modern interior of octagon room"
-      />
+      <br /><span class="box-container-left">
+        <img
+          class="medialeft"
+          width="300"
+          src="Basildon Park img/20260421_115054.jpg"
+          alt="Picture showing modern interior of octagon room"
+        /><span class="caption"
+          >Picture showing modern interior of octagon room</span
+        >
+      </span>
 
       The Iliffes decided to redecorate the Octagon room, but took into account
       that what they chose had to harmonise with the elaborate ceiling left by
